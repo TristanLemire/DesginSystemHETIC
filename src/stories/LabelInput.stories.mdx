@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { LabelInput } from "../components/molecules/LabelInput";
+
+<Meta
+  title="Components/Atoms/LabelInput"
+  component={LabelInput}
+  argTypes={{
+    placeholder: {
+      control: {
+        type: "text",
+      },
+    },
+    type: {
+      control: {
+        type: "radio",
+        options: ["email", "password", "text", "tel"],
+      },
+    },
+    label: {
+      control: {
+        type: "text",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# LabelInput
+
+export const Template = (args) => <LabelInput {...args} />;
+
+<Canvas>
+  <Story
+    name="Label input"
+    args={{ type: "email", placeholder: "email@example.com", label: "Email" }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

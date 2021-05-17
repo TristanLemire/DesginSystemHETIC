@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { RegisterForm } from "../components/organisms/RegisterForm";
+
+<Meta
+  title="Components/Organisms/RegisterForm"
+  component={RegisterForm}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# RegisterForm
+
+export const Template = (args) => <RegisterForm {...args} />;
+
+<Canvas>
+  <Story name="Register form">{Template.bind({})}</Story>
+</Canvas>

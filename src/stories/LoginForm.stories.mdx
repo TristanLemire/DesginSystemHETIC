@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { LoginForm } from "../components/organisms/LoginForm";
+
+<Meta
+  title="Components/Organisms/LoginForm"
+  component={LoginForm}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# LoginForm
+
+export const Template = (args) => <LoginForm {...args} />;
+
+<Canvas>
+  <Story name="Login form">{Template.bind({})}</Story>
+</Canvas>
