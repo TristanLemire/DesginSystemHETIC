@@ -54,14 +54,16 @@ export const colors = {
 };
 
 export const space = {
-  base: rem(16),
+  xxxs: rem(2),
   xxs: rem(4),
   xs: rem(8),
   sm: rem(12),
+  base: rem(16),
   md: rem(24),
   lg: rem(32),
   xl: rem(40),
-  xxl: rem(64),
+  xxl: rem(48),
+  xxxl: rem(64),
 };
 
 export const radius = {
