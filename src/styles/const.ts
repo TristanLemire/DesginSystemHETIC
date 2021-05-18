@@ -88,6 +88,8 @@ export const font: {
     | "xxxl",
     string
   >;
+  lineHeight: Record<"paragraph" | "title", string>;
+  letterSpacing: Record<"tracked", string>;
 } = {
   weight: {
     light: 300,
@@ -107,5 +109,12 @@ export const font: {
     xl: rem(36),
     xxl: rem(48),
     xxxl: rem(72),
+  },
+  lineHeight: {
+    paragraph: "125%",
+    title: "150%",
+  },
+  letterSpacing: {
+    tracked: "0.02em",
   },
 };

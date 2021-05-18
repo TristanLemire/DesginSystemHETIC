@@ -65,10 +65,17 @@ import { space, font } from "../styles/const.ts";
    font-size: ${font.size.xxxl};
   }
 
-th, td {
-  padding: 15px;
-  padding-top: 3000;
-}
+  .lineHeightParagraph {
+    line-height: 125%;
+  }
+
+  .lineHeightTitle {
+    line-height: 150%;
+  }
+
+  .letterSpacingTracked {
+    letter-spacing: 0.02em;
+  }
 `}</style>
 
 # Styles
@@ -274,6 +281,76 @@ th, td {
       <td>72px</td>
       <td>
         <p class="sizeXxxl">Font size xxxl</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div className="subheading">Line height</div>
+<table class="sizeTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Exemple</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Regular</td>
+      <td>100%</td>
+      <td>
+        <p>
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.lineHeight.paragraph</td>
+      <td>{font.lineHeight.paragraph}</td>
+      <td>
+        <p class="lineHeightParagraph">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.lineHeight.title</td>
+      <td>{font.lineHeight.title}</td>
+      <td>
+        <p class="lineHeightTitle">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div className="subheading">Letter spacing</div>
+<table class="sizeTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Exemple</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Regular</td>
+      <td>Regular</td>
+      <td>
+        <p>letter spacing regular</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.letterSpacing.tracked</td>
+      <td>{font.letterSpacing.tracked}</td>
+      <td>
+        <p class="letterSpacingTracked">letter spacing letterSpacing</p>
       </td>
     </tr>
   </tbody>
