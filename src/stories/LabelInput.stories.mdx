@@ -2,7 +2,7 @@ import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import { LabelInput } from "../components/molecules/LabelInput";
 
 <Meta
-  title="Components/Atoms/LabelInput"
+  title="Components/Molecules/LabelInput"
   component={LabelInput}
   argTypes={{
     placeholder: {
@@ -19,6 +19,11 @@ import { LabelInput } from "../components/molecules/LabelInput";
     label: {
       control: {
         type: "text",
+      },
+    },
+    error: {
+      control: {
+        type: "object",
       },
     },
   }}
@@ -38,7 +43,12 @@ export const Template = (args) => <LabelInput {...args} />;
 <Canvas>
   <Story
     name="Label input"
-    args={{ type: "email", placeholder: "email@example.com", label: "Email" }}
+    args={{
+      type: "email",
+      placeholder: "email@example.com",
+      label: "Email",
+      callback: () => {},
+    }}
   >
     {Template.bind({})}
   </Story>

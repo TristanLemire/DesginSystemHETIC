@@ -33,13 +33,17 @@ export const Template = (args) => <Input {...args} />;
 <Canvas>
   <Story
     name="Email input"
-    args={{ type: "email", placeholder: "email@example.com" }}
+    args={{
+      type: "email",
+      placeholder: "email@example.com",
+      callback: () => {},
+    }}
   >
     {Template.bind({})}
   </Story>
   <Story
     name="Password input"
-    args={{ type: "password", placeholder: "Password" }}
+    args={{ type: "password", placeholder: "Password", callback: () => {} }}
   >
     {Template.bind({})}
   </Story>
