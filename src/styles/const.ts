@@ -71,14 +71,41 @@ export const radius = {
   lg: "4px",
 };
 
-export type FontWeight = 300 | 400 | 600 | 700;
+export type FontWeight = 300 | 400 | 500 | 700;
 export const font: {
-  weight: Record<"light" | "normal" | "semiBold" | "bold", FontWeight>;
+  weight: Record<"light" | "regular" | "medium" | "bold", FontWeight>;
+  size: Record<
+    | "xxxs"
+    | "xxs"
+    | "xs"
+    | "s"
+    | "sm"
+    | "base"
+    | "md"
+    | "lg"
+    | "xl"
+    | "xxl"
+    | "xxxl",
+    string
+  >;
 } = {
   weight: {
     light: 300,
-    normal: 400,
-    semiBold: 600,
+    regular: 400,
+    medium: 500,
     bold: 700,
+  },
+  size: {
+    xxxs: rem(10),
+    xxs: rem(12),
+    xs: rem(16),
+    s: rem(18),
+    sm: rem(20),
+    base: rem(24),
+    md: rem(28),
+    lg: rem(32),
+    xl: rem(36),
+    xxl: rem(48),
+    xxxl: rem(72),
   },
 };
