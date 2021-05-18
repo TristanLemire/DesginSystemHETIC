@@ -1,4 +1,4 @@
-import { space } from "../styles/const.ts";
+import { space, font } from "../styles/const.ts";
 
 <Meta title="Design System/Styles" />
 
@@ -14,6 +14,61 @@ import { space } from "../styles/const.ts";
     margin-bottom: 12px;
     margin-top: 40px;
   }
+
+  .fontLight {
+    font-weight: ${font.weight.light};
+  }
+
+  .fontRegular {
+    font-weight: ${font.weight.regular};
+  }
+
+  .fontMedium {
+    font-weight: ${font.weight.medium};
+  }
+
+  .fontBold {
+    font-weight: ${font.weight.bold};
+  }
+
+  .sizeXxxs {
+    font-size: ${font.size.xxxs};
+  }
+  .sizeXxs {
+    font-size: ${font.size.xxs};
+  }
+  .sizeXs {
+   font-size: ${font.size.xs};
+  }
+  .sizeS {
+   font-size: ${font.size.s};
+  }
+  .sizeSm {
+   font-size: ${font.size.sm};
+  }
+  .sizeBase {
+   font-size: ${font.size.base};
+  }
+  .sizeMd {
+   font-size: ${font.size.md};
+  }
+  .sizeLg {
+   font-size: ${font.size.lg};
+  }
+  .sizeXl {
+   font-size: ${font.size.xl};
+  }
+  .sizeXxl {
+   font-size: ${font.size.xxl};
+  }
+  .sizeXxxl {
+   font-size: ${font.size.xxxl};
+  }
+
+th, td {
+  padding: 15px;
+  padding-top: 3000;
+}
 `}</style>
 
 # Styles
@@ -77,6 +132,149 @@ import { space } from "../styles/const.ts";
       <td>space.xxxl</td>
       <td>{space.xxxl}</td>
       <td>64</td>
+    </tr>
+  </tbody>
+</table>
+
+<div className="subheading">Font weight</div>
+<table class="darkTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Exemple</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font.weight.light</td>
+      <td>{font.weight.light}</td>
+      <td>
+        <p class="fontLight">Light</p>
+      </td>
+    </tr>
+    <tr>
+      <td>space.xxs</td>
+      <td>{font.weight.regular}</td>
+      <td>
+        <p class="fontRegular">Regular</p>
+      </td>
+    </tr>
+    <tr>
+      <td>space.xs</td>
+      <td>{font.weight.medium}</td>
+      <td>
+        <p class="fontMedium">Medium</p>
+      </td>
+    </tr>
+    <tr>
+      <td>space.sm</td>
+      <td>{font.weight.bold}</td>
+      <td>
+        <p class="fontBold">Bold</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div className="subheading">Font size</div>
+<table class="sizeTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value rem</th>
+      <th>Value pixel</th>
+      <th>Exemple</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font.size.xxxs</td>
+      <td>{font.size.xxxs}</td>
+      <td>10px</td>
+      <td>
+        <p class="sizeXxxs">Font size xxxs</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.xxs</td>
+      <td>{font.size.xxs}</td>
+      <td>12px</td>
+      <td>
+        <p class="sizeXxs">Font size xxs</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.xs</td>
+      <td>{font.size.xs}</td>
+      <td>16px</td>
+      <td>
+        <p class="sizeXs">Font size xs</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.s</td>
+      <td>{font.size.s}</td>
+      <td>18px</td>
+      <td>
+        <p class="sizeS">Font size s</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.sm</td>
+      <td>{font.size.sm}</td>
+      <td>20px</td>
+      <td>
+        <p class="sizeSm">Font size sm</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.base</td>
+      <td>{font.size.base}</td>
+      <td>24px</td>
+      <td>
+        <p class="sizeBase">Font size base</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.md</td>
+      <td>{font.size.md}</td>
+      <td>28px</td>
+      <td>
+        <p class="sizeMd">Font size md</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.lg</td>
+      <td>{font.size.lg}</td>
+      <td>32px</td>
+      <td>
+        <p class="sizeLg">Font size lg</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.xl</td>
+      <td>{font.size.xl}</td>
+      <td>36px</td>
+      <td>
+        <p class="sizeXl">Font size xl</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.xxl</td>
+      <td>{font.size.xxl}</td>
+      <td>48px</td>
+      <td>
+        <p class="sizeXxl">Font size xxl</p>
+      </td>
+    </tr>
+    <tr>
+      <td>font.size.xxxl</td>
+      <td>{font.size.xxxl}</td>
+      <td>72px</td>
+      <td>
+        <p class="sizeXxxl">Font size xxxl</p>
+      </td>
     </tr>
   </tbody>
 </table>
