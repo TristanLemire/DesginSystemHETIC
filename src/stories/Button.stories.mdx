@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Button } from "../components/atoms/Button";
+
+<Meta
+  title="Components/Atoms/Button"
+  component={Button}
+  argTypes={{
+    text: {
+      control: {
+        type: "text",
+      },
+    },
+    isAction: {
+      control: {
+        type: "boolean",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# Button
+
+export const Template = (args) => <Button {...args} />;
+
+<Canvas>
+  <Story name="Link primary" args={{ text: "Primary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Link primary disabled" args={{ text: "Primary disabled" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Link secondary" args={{ text: "Secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action primary" args={{ text: "Primary", isAction: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Action secondary" args={{ text: "Secondary", isAction: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
