@@ -2,39 +2,34 @@ import { rem } from "polished";
 
 export const colors = {
   primary: {
-    darker: "#322B01",
-    dark: "#968004",
-    base: "#FAD506",
-    light: "#FCE66A",
-    lighter: "#FEF7CD",
+    dark: "#DAAD10",
+    base: "#F5CC7C",
+    light: "#FBEAAF",
+    lighter: "#FCF6E0",
   },
   secondary: {
-    darker: "#010932",
-    dark: "#041A96",
-    base: "#062BFA",
-    light: "#6A80FC",
-    lighter: "#CDD5FE",
+    dark: "#063773",
+    base: "#3A84DC",
+    light: "#83B8F9",
+    lighter: "#D1E4FC",
   },
   tertiary: {
-    darker: "#2D0520",
     dark: "#891E61",
     base: "#FA06A5",
     light: "#EA75C5",
     lighter: "#F6CFEB",
   },
   error: {
-    darker: "#2D070A",
-    dark: "#8A1F21",
-    base: "#FC142C",
-    light: "#EC7A82",
-    lighter: "#F7D2D5",
+    dark: "#7E1B17",
+    base: "#C54039",
+    light: "#EE7E79",
+    lighter: "#FBE8E8",
   },
   success: {
-    darker: "#013212",
-    dark: "#049637",
-    base: "#06FA5B",
-    light: "#6AFC9D",
-    lighter: "#CDFEDE",
+    dark: "#0B8257",
+    base: "#52B596",
+    light: "#83EBC6",
+    lighter: "#D5F8EB",
   },
   neutral: {
     darker: "#272724",
@@ -50,6 +45,7 @@ export const colors = {
   font: {
     dark: "#191501",
     grey: "#707072",
+    white: "#FBFBFE",
   },
 };
 
@@ -75,17 +71,7 @@ export type FontWeight = 300 | 400 | 500 | 700;
 export const font: {
   weight: Record<"light" | "regular" | "medium" | "bold", FontWeight>;
   size: Record<
-    | "xxxs"
-    | "xxs"
-    | "xs"
-    | "s"
-    | "sm"
-    | "base"
-    | "md"
-    | "lg"
-    | "xl"
-    | "xxl"
-    | "xxxl",
+    "xxxs" | "xxs" | "xs" | "s" | "sm" | "base" | "md" | "lg" | "xl" | "xxl",
     string
   >;
   lineHeight: Record<"paragraph" | "title", string>;
@@ -108,7 +94,6 @@ export const font: {
     lg: rem(32),
     xl: rem(36),
     xxl: rem(48),
-    xxxl: rem(72),
   },
   lineHeight: {
     paragraph: "125%",
