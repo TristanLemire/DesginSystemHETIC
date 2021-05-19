@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LabelInput } from "../molecules/LabelInput";
+import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
 
 export const NewPasswordForm = () => {
@@ -8,13 +8,13 @@ export const NewPasswordForm = () => {
     <NewPasswordFormWrapper>
       <FormTitle>Forgot password ?</FormTitle>
       <form>
-        <LabelInput
-          type="email"
-          placeholder="email@example.com"
-          label="Email"
+        <Input type="email" placeholder="email@example.com" label="Email" />
+        <Input
+          type="password"
+          placeholder="New password"
+          label="New password"
         />
-        <LabelInput type="password" placeholder="New password" label="New password" />
-        <LabelInput
+        <Input
           type="password"
           placeholder="Confirm new password"
           label="Confirm new password"

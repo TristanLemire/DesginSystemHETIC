@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { LabelInput } from "../molecules/LabelInput";
+import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
 import { isEmailValid } from "../../utils/regex";
 
@@ -68,14 +68,14 @@ export const LoginForm = () => {
         Not signed up ? <a>Register</a>
       </div>
       <form>
-        <LabelInput
+        <Input
           type="email"
           placeholder="email@example.com"
           label="Email"
           callback={updateEmail}
           error={userError}
         />
-        <LabelInput
+        <Input
           type="password"
           placeholder="Password"
           label="Password"
