@@ -70,15 +70,15 @@ export const LoginForm = () => {
       <form>
         <Input
           type="email"
-          placeholder="email@example.com"
-          label="Email"
+          placeholder="Email, téléphone ou d'utilisateur"
+          label="Email, téléphone ou d'utilisateur"
           callback={updateEmail}
           error={userError}
         />
         <Input
           type="password"
-          placeholder="Password"
-          label="Password"
+          placeholder="Mot de passe"
+          label="Mot de passe"
           callback={updatePassword}
           error={{}}
         />

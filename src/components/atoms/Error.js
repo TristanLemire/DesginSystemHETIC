@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { colors } from "../../styles/const";
 
 export const Error = ({ error }) => {
   if (!error?.text) return null;
@@ -20,13 +21,13 @@ export const Error = ({ error }) => {
 };
 
 const ErrorWrapper = styled.span`
-  color: blue;
+  color: ${colors.error.base};
 `;
 
 const RequirementList = styled.ul`
-  color: blue;
+  color: ${colors.error.base};
 `;
 
 const RequirementItem = styled.li`
-  color: blue;
+  color: ${colors.error.base};
 `;
