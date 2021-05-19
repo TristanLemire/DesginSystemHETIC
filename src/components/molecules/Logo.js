@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../assets/icons/banana.svg";
+import logo from "../../assets/icons/bananamania-logo.svg";
+import { space } from "../../styles/const";
 
 export const Logo = () => {
   return (
@@ -18,7 +19,7 @@ const LogoWrapper = styled.div`
 `;
 
 const IconWrapper = styled.img`
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
+  width: ${space.xxxl};
+  height: ${space.xxxl};
+  margin-right: ${space.base};
 `;
