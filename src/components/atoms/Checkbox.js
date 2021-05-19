@@ -18,17 +18,22 @@ const InputWrapper = styled.input`
   display: block;
   margin-right: ${space.xs};
   cursor: pointer;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  height: 0;
 
   &:after {
-    content: "";
-    position: absolute;
+    content: url(${checkbox});
     display: inline-block;
-    height: 24px;
-    width: 24px;
-    background: url(${checkbox});
+    position: relative;
+    left: -7px;
+    height: 0;
+    top: -7px;
+    width: 14px;
   }
 
   &:checked:after {
-    background: url(${checkboxChecked});
+    content: url(${checkboxChecked});
   }
 `;
