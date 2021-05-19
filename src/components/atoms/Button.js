@@ -2,19 +2,16 @@ import React from "react";
 import { colors, space, font, radius, borderWidth } from "../../styles/const.ts";
 import styled from "styled-components";
 
-export const Button = ({ text, isAction, isDisabled, handleClick }) => {
+export const Button = ({ text, isDisabled, handleClick }) => {
   const handleOnCLick = (event) => {
     event.preventDefault();
     handleClick();
   };
-  if (isAction) {
-    return (
-      <ButtonStyled disabled={isDisabled} onClick={handleOnCLick}>
-        {text}
-      </ButtonStyled>
-    );
-  }
-  return <a>{text}</a>;
+  return (
+    <ButtonStyled disabled={isDisabled} onClick={handleOnCLick}>
+      {text}
+    </ButtonStyled>
+  );
 };
 
 const ButtonStyled = styled.button`

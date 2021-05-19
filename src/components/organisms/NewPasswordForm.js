@@ -20,7 +20,7 @@ export const NewPasswordForm = () => {
           label="Confirm new password"
         />
       </form>
-      <Button isAction={true} text="Change my password"></Button>
+      <Button text="Change my password"></Button>
     </NewPasswordFormWrapper>
   );
 };

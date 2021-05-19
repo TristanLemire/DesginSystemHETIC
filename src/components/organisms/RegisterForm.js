@@ -132,7 +132,6 @@ export const RegisterForm = () => {
         />
       </form>
       <Button
-        isAction={true}
         isDisabled={isSubmitDisabled}
         text="Sign up"
         handleClick={handleFormSubmit}
