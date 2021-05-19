@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Button = ({ text, isAction }) => {
+export const Button = ({ text, isAction, isDisabled, handleClick }) => {
+  const handleOnCLick = (event) => {
+    event.preventDefault();
+    handleClick();
+  };
   if (isAction) {
     return (
-      <ButtonStyled>
-        <button>{text}</button>
+      <ButtonStyled disabled={isDisabled} onClick={handleOnCLick}>
+        {text}
       </ButtonStyled>
     );
   }
-  return (
-    <ButtonStyled>
-      <a>{text}</a>
-    </ButtonStyled>
-  );
+  return <a>{text}</a>;
 };
 
 const ButtonStyled = styled.button`

@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Error } from "../components/atoms/Error";
+
+<Meta
+  title="Components/Atoms/Error"
+  component={Error}
+  argTypes={{
+    error: {
+      control: {
+        type: "object",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# Error
+
+export const Template = (args) => <Error {...args} />;
+
+<Canvas>
+  <Story
+    name="Input error"
+    args={{ error: { text: "Veuillez définir une adresse email valide." } }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
