@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Header } from "../components/organisms/Header";
+import "../styles/vendors/reset.css";
+
+<Meta
+  title="Components/Organisms/Header"
+  component={Header}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/DS-G8-Bananamania?node-id=176%3A16640",
+    },
+  }}
+/>
+
+# Header
+
+export const Template = (args) => <Header {...args} />;
+
+<Canvas>
+  <Story name="Header">{Template.bind({})}</Story>
+</Canvas>
