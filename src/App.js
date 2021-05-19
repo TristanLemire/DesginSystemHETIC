@@ -1,13 +1,10 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import { Header } from "./components/organisms/Header";
 import { LoginPage } from "./components/pages/LoginPage";
 import "./styles/vendors/reset.css";
+import { Text } from "./components/atoms/Text";
 
 export const App = () => {
   return (

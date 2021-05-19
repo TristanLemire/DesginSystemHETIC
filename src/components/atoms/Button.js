@@ -1,5 +1,11 @@
 import React from "react";
-import { colors, space, font, radius, borderWidth } from "../../styles/const.ts";
+import {
+  colors,
+  space,
+  font,
+  radius,
+  borderWidth,
+} from "../../styles/const.ts";
 import styled from "styled-components";
 
 export const Button = ({ text, isAction, isDisabled, handleClick }) => {

@@ -1,0 +1,83 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Text } from "../components/atoms/Text";
+import { fontType } from "../styles/const";
+
+<Meta
+  title="Components/Atoms/Text"
+  component={Text}
+  argTypes={{
+    tag: {
+      control: {
+        options: ["h1", "h2", "h3", "h4", "span", "p"],
+        control: { type: "select" },
+      },
+    },
+    children: {
+      control: {
+        type: "text",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/DS-G8-Bananamania?node-id=193%3A12318",
+    },
+  }}
+/>
+
+# Text
+
+export const Template = (args) => <Text {...args} />;
+
+<Canvas>
+  <Story
+    name="Text input"
+    args={{ children: "Primary", tag: "h1", type: fontType.input }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text logo"
+    args={{ children: "Primary", tag: "h1", type: fontType.logo }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text title"
+    args={{ children: "Primary", tag: "h1", type: fontType.title }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text regular"
+    args={{ children: "Primary", tag: "h1", type: fontType.regular }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text action"
+    args={{ children: "Primary", tag: "h1", type: fontType.action }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text button"
+    args={{ children: "Primary", tag: "h1", type: fontType.textButton }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text link"
+    args={{ children: "Primary", tag: "h1", type: fontType.link }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text input"
+    args={{ children: "Primary", tag: "h1", type: fontType.input }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
