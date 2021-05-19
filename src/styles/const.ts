@@ -65,6 +65,11 @@ export const space = {
 export const radius = {
   base: "2px",
   lg: "4px",
+  xl: "8px",
+};
+
+export const borderWidth = {
+  base: "4px",
 };
 
 export type FontWeight = 300 | 400 | 500 | 700;
