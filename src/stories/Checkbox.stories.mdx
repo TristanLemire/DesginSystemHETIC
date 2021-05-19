@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Checkbox } from "../components/atoms/Checkbox";
+
+<Meta
+  title="Components/Atoms/Checkbox"
+  component={Checkbox}
+  argTypes={{
+    label: {
+      control: {
+        type: "text",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# Checkbox
+
+export const Template = (args) => <Checkbox {...args} />;
+
+<Canvas>
+  <Story name="Input Checkbox" args={{ name: "stayConnected" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
