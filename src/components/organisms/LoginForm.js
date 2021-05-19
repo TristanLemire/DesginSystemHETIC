@@ -85,7 +85,6 @@ export const LoginForm = () => {
       </form>
       <div>Forgot password ?</div>
       <Button
-        isAction={true}
         text="Sign in"
         isDisabled={isSubmitDisabled}
         handleClick={handleFormSubmit}

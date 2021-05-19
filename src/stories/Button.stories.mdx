@@ -10,11 +10,6 @@ import { Button } from "../components/atoms/Button";
         type: "text",
       },
     },
-    isAction: {
-      control: {
-        type: "boolean",
-      },
-    },
   }}
   parameters={{
     design: {
@@ -30,19 +25,7 @@ import { Button } from "../components/atoms/Button";
 export const Template = (args) => <Button {...args} />;
 
 <Canvas>
-  <Story name="Link primary" args={{ text: "Primary" }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Link primary disabled" args={{ text: "Primary disabled" }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Link secondary" args={{ text: "Secondary" }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Action primary" args={{ text: "Primary", isAction: true }}>
-    {Template.bind({})}
-  </Story>
-  <Story name="Action secondary" args={{ text: "Secondary", isAction: true }}>
+  <Story name="Action primary" args={{ text: "Primary" }}>
     {Template.bind({})}
   </Story>
 </Canvas>
