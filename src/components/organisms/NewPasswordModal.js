@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-export const NewPasswordForm = () => {
+export const NewPasswordModal = () => {
   const [user, setUser] = useState("defaultuser@mail.com");
 
   useEffect(() => {
@@ -16,16 +16,16 @@ export const NewPasswordForm = () => {
   }, []);
 
   return (
-    <NewPasswordFormWrapper>
+    <NewPasswordModalWrapper>
       <FormTitle>Forgot password ?</FormTitle>
       <p>{`Nous avons envoyé un message à l’adresse ${user} afin que vous choisissiez un nouveau mot de passe.`}</p>
       <p>Vous n’avez pas reçu l’email ? </p>
       {/* TODO: retour à la page d'accueil = link ? si oui changer design ? */}
-    </NewPasswordFormWrapper>
+    </NewPasswordModalWrapper>
   );
 };
 
-const NewPasswordFormWrapper = styled.div`
+const NewPasswordModalWrapper = styled.div`
   padding: 50px;
   background-color: red;
   display: inline-block;
