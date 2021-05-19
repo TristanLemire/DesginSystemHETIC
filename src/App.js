@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Header } from "./components/organisms/Header";
 import { LoginPage } from "./components/pages/LoginPage";
 import "./styles/vendors/reset.css";
-import { Text } from "./components/atoms/Text";
 
 export const App = () => {
   return (
