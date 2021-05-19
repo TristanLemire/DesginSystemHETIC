@@ -1,26 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { LabelInput } from "../molecules/LabelInput";
-import { Button } from "../atoms/Button";
 
 export const NewPasswordForm = () => {
+  const [user, setUser] = useState("defaultuser@mail.com");
+
+  useEffect(() => {
+    const existingUsers = JSON.parse(localStorage.getItem("users"));
+    const currentUser =
+      existingUsers && existingUsers.find((user) => user.isLogged);
+
+    if (!currentUser) return;
+
+    const userEmail = currentUser.email;
+    setUser(userEmail);
+  }, []);
+
   return (
     <NewPasswordFormWrapper>
       <FormTitle>Forgot password ?</FormTitle>
-      <form>
-        <LabelInput
-          type="email"
-          placeholder="email@example.com"
-          label="Email"
-        />
-        <LabelInput type="password" placeholder="New password" label="New password" />
-        <LabelInput
-          type="password"
-          placeholder="Confirm new password"
-          label="Confirm new password"
-        />
-      </form>
-      <Button text="Change my password"></Button>
+      <p>{`Nous avons envoyé un message à l’adresse ${user} afin que vous choisissiez un nouveau mot de passe.`}</p>
+      <p>Vous n’avez pas reçu l’email ? </p>
+      {/* TODO: retour à la page d'accueil = link ? si oui changer design ? */}
     </NewPasswordFormWrapper>
   );
 };
