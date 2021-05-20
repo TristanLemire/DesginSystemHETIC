@@ -7,6 +7,8 @@ import { isEmailValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType, space } from "../../styles/const";
 import {VerticalSpacing32, VerticalSpacing48, VerticalSpacing64, FormWrapper} from "../atoms/Container"
+import { CustomLink } from "../atoms/CustomLink";
+import {MemoryRouter} from 'react-router-dom';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -91,7 +93,7 @@ export const LoginForm = () => {
         </VerticalSpacing64>
         <LoginOption>
           <LabelCheckbox label="Rester connecté" name="stayConnected" />
-          <span>Forgot password ?</span>
+          <CustomLink text="Mot de passe oublié ?" goTo="/password-recovery"/>
         </LoginOption>
       </form>
       <VerticalSpacing64>
@@ -103,7 +105,7 @@ export const LoginForm = () => {
       </VerticalSpacing64>
       <RegisterOption>
         <Text tap="span" type={fontType.regular} color={colors.font.grey}>Pas encore inscrit ? </Text>
-        <span>S'inscrire ici</span>
+        <CustomLink text="S'inscrire ici" goTo="/register"/>
       </RegisterOption>
     </FormWrapper>
   );

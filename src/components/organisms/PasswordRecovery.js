@@ -3,8 +3,11 @@ import { colors, fontType } from "../../styles/const";
 import {VerticalSpacing48, VerticalSpacing40, FormWrapper} from "../atoms/Container"
 import { Text } from "../atoms/Text";
 import { Button } from "../atoms/Button";
+import { useHistory } from 'react-router-dom';
 
 export const PasswordRecovery = () => {
+  const history = useHistory();
+
   return (
     <FormWrapper>
       <VerticalSpacing48>
@@ -22,7 +25,7 @@ export const PasswordRecovery = () => {
           Vous n’avez pas reçu l’email ? N’hésitez pas à <span>contacter le support</span>
         </Text>
       </VerticalSpacing40>
-      <Button text="Retourner à la page de connexion" />
+      <Button handleClick={() => history.push('/')} text="Retourner à la page de connexion" />
     </FormWrapper>
   );
 };

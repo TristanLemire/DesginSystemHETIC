@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { CustomLink } from "../components/atoms/CustomLink";
+
+<Meta
+  title="Components/Atoms/CustomLink"
+  component={CustomLink}
+  argTypes={{
+    text: {
+      control: {
+        type: "text",
+      },
+    },
+    goTo: {
+      control: {
+        type: "text",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# CustomLink
+
+export const Template = (args) => <CustomLink {...args} />;
+
+<Canvas>
+  <Story
+    name="Custom link"
+    args={{text:"S'inscrire ici", goTo:"/register"}}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

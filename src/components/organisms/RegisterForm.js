@@ -6,6 +6,7 @@ import { isEmailValid, isPasswordValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType } from "../../styles/const";
 import {VerticalSpacing32, VerticalSpacing64, FormWrapper} from "../atoms/Container"
+import { CustomLink } from "../atoms/CustomLink";
 
 export const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -148,7 +149,7 @@ export const RegisterForm = () => {
       </VerticalSpacing64>
       <RegisterOption>
         <Text tap="span" type={fontType.regular} color={colors.font.grey}>Déjà inscrit ? </Text>
-        <span>Se connecter ici</span>
+        <CustomLink text="Se connecter ici" goTo="/"/>
       </RegisterOption>
     </FormWrapper>
   );
