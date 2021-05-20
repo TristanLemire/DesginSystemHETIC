@@ -101,9 +101,7 @@ export const LoginForm = () => {
         />
       </VerticalSpacing64>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
-          Pas encore inscrit ?{" "}
-        </Text>
+        <Text tap="span" type={fontType.regular} color={colors.font.grey}>Pas encore inscrit ? </Text>
         <span>Forgot password ?</span>
       </RegisterOption>
     </LoginFormWrapper>
