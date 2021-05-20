@@ -111,6 +111,8 @@ export const font: {
   },
 };
 
+export const boxShadow = "0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7"
+
 export type fontStyleType = {
   fontSize: string;
   fontWeight: number ;

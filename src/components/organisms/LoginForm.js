@@ -6,6 +6,7 @@ import { Button } from "../atoms/Button";
 import { isEmailValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType, space } from "../../styles/const";
+import {VerticalSpacing32, VerticalSpacing48, VerticalSpacing64, FormWrapper} from "../atoms/Container"
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -65,7 +66,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <LoginFormWrapper>
+    <FormWrapper>
       <VerticalSpacing48>
         <Text tag="h2" type={fontType.title} color={colors.font.dark}>
           Se connecter
@@ -74,7 +75,7 @@ export const LoginForm = () => {
       <form>
         <VerticalSpacing32>
           <Input
-            type="email"
+            type="text"
             placeholder="Email, téléphone ou nom d'utilisateur"
             callback={updateEmail}
             error={userError}
@@ -102,24 +103,11 @@ export const LoginForm = () => {
       </VerticalSpacing64>
       <RegisterOption>
         <Text tap="span" type={fontType.regular} color={colors.font.grey}>Pas encore inscrit ? </Text>
-        <span>Forgot password ?</span>
+        <span>S'inscrire ici</span>
       </RegisterOption>
-    </LoginFormWrapper>
+    </FormWrapper>
   );
 };
-
-const LoginFormWrapper = styled.div`
-  padding: ${space.xxl};
-  background-color: ${colors.background.white};
-  max-width: 595px;
-  min-width: 375px;
-  width: 40%;
-  box-shadow: 0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7;
-`;
-
-const VerticalSpacing48 = styled.div`
-  margin-bottom: ${space.xxl};
-`;
 
 const LoginOption = styled.div`
   display: flex;
@@ -131,12 +119,4 @@ const LoginOption = styled.div`
 const RegisterOption = styled.div`
   display: flex;
   justify-content: flex-end;
-`;
-
-const VerticalSpacing32 = styled.div`
-  margin-bottom: ${space.lg};
-`;
-
-const VerticalSpacing64 = styled.div`
-  margin-bottom: ${space.xxxl};
 `;

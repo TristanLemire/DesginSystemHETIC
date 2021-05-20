@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
 import { isEmailValid, isPasswordValid } from "../../utils/regex";
+import { Text } from "../atoms/Text";
+import { colors, fontType } from "../../styles/const";
+import {VerticalSpacing32, VerticalSpacing64, FormWrapper} from "../atoms/Container"
 
 export const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -86,68 +89,72 @@ export const RegisterForm = () => {
   // };
 
   return (
-    <LoginFormWrapper>
-      <FormTitle>Sign up</FormTitle>
-      <div>
-        Already got an account ? <a>Sign in </a>
-      </div>
-      <form>
-        <Input
-          type="email"
-          placeholder="email@example.com"
-          label="Email"
-          callback={updateEmail}
-          error={userError}
-        />
-        <Input
-          type="password"
-          placeholder="Password"
-          label="Password"
-          callback={updatePassword}
-          error={
-            isWrongPassword
-              ? {
-                  text:
-                    "Le mot de passe doit contenir au moins 8 charactères  dont :",
-                  requirements: [
-                    "1 majuscule",
-                    "1 minuscule",
-                    "1 nombre",
-                    "1 charactère spécial",
-                  ],
-                }
-              : {}
-          }
-        />
-        <Input
-          type="password"
-          placeholder="Password"
-          label="Password confirmation"
-          callback={updateConfirmPassword}
-          error={
-            isWrongConfirmPassword
-              ? { text: "Les mots de passe ne correspondent pas." }
-              : {}
-          }
-        />
-      </form>
+    <FormWrapper>
+      <VerticalSpacing32>
+        <Text tag="h2" type={fontType.title} color={colors.font.dark}>Créer son compte</Text>
+      </VerticalSpacing32>
+      <VerticalSpacing32>
+        <Text tag="h3" type={fontType.regular} color={colors.font.grey}>Pour accéder à la boutique et découvrir Bananamania !</Text>
+      </VerticalSpacing32>
+      <VerticalSpacing64>
+        <form>
+        <VerticalSpacing32>
+            <Input
+              type="text"
+              placeholder="Email, téléphone ou nom d’utilisateur"
+              callback={updateEmail}
+              error={userError}
+            />
+          </VerticalSpacing32>
+          <VerticalSpacing32>
+            <Input
+              type="password"
+              placeholder="Password"
+              callback={updatePassword}
+              error={
+                isWrongPassword
+                  ? {
+                      text:
+                        "Le mot de passe doit contenir au moins 8 charactères  dont :",
+                      requirements: [
+                        "1 majuscule",
+                        "1 minuscule",
+                        "1 nombre",
+                        "1 charactère spécial",
+                      ],
+                    }
+                  : {}
+              }
+            />
+            </VerticalSpacing32>
+            <Input
+              type="password"
+              placeholder="Password confirmation"
+              callback={updateConfirmPassword}
+              error={
+                isWrongConfirmPassword
+                  ? { text: "Les mots de passe ne correspondent pas." }
+                  : {}
+              }
+            />
+        </form>
+      </VerticalSpacing64>
+      <VerticalSpacing64>
       <Button
         isDisabled={isSubmitDisabled}
-        text="Sign up"
+        text="Accéder à mon compte"
         handleClick={handleFormSubmit}
       />
-    </LoginFormWrapper>
+      </VerticalSpacing64>
+      <RegisterOption>
+        <Text tap="span" type={fontType.regular} color={colors.font.grey}>Déjà inscrit ? </Text>
+        <span>Se connecter ici</span>
+      </RegisterOption>
+    </FormWrapper>
   );
 };
 
-const LoginFormWrapper = styled.div`
-  padding: 50px;
-  background-color: red;
-  display: inline-block;
-`;
-
-const FormTitle = styled.h2`
-  text-align: center;
-  width: 100%;
-  margin-bottom: 20px;
+const RegisterOption = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;

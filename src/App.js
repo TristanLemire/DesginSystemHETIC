@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Header } from "./components/organisms/Header";
 import { LoginPage } from "./components/pages/LoginPage";
 import "./styles/vendors/reset.css";
+import { RegisterPage } from "./components/pages/RegisterPage";
 
 export const App = () => {
   return (
@@ -12,8 +13,7 @@ export const App = () => {
         <Switch>
           <Route path="/register">
             <div>
-              <Header />
-              <p>register Page</p>
+              <RegisterPage/>
             </div>
           </Route>
           <Route path="/">
