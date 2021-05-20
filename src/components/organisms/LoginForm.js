@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { LabelCheckbox } from "../molecules/LabelCheckbox";
 import { LabelInput } from "../molecules/LabelInput";
 import { Button } from "../atoms/Button";
 import { isEmailValid } from "../../utils/regex";
@@ -81,6 +82,10 @@ export const LoginForm = () => {
           label="Password"
           callback={updatePassword}
           error={{}}
+        />
+        <LabelCheckbox
+          label="Rester connecté"
+          name="stayConnected"
         />
       </form>
       <div>Forgot password ?</div>

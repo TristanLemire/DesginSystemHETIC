@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { LabelCheckbox } from "../components/molecules/LabelCheckbox";
+
+<Meta
+  title="Components/Molecules/LabelCheckbox"
+  component={LabelCheckbox}
+  argTypes={{
+    name: {
+      control: {
+        type: "text",
+      },
+    },
+    label: {
+      control: {
+        type: "text",
+      },
+    },
+    error: {
+      control: {
+        type: "object",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# LabelCheckbox
+
+export const Template = (args) => <LabelCheckbox {...args} />;
+
+<Canvas>
+  <Story
+    name="Label Checkbox"
+    args={{
+      name: "StayConnected",
+      label: "Rester connecté",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

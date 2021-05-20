@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { CheckboxLabel } from "../components/atoms/CheckboxLabel";
+
+<Meta
+  title="Components/Atoms/CheckboxLabel"
+  component={CheckboxLabel}
+  argTypes={{
+    label: {
+      control: {
+        type: "text",
+      },
+    },
+		name: {
+      control: {
+        type: "text",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/Design-System?node-id=1%3A5",
+    },
+  }}
+/>
+
+# CheckboxLabel
+
+export const Template = (args) => <CheckboxLabel {...args} />;
+
+<Canvas>
+  <Story name="Checkbox label" args={{ label: "Rester connecter", name: "stayConnected" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
