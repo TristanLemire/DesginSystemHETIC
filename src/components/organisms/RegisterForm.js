@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { LabelInput } from "../molecules/LabelInput";
+import { Input } from "../atoms/Input";
 import { Button } from "../atoms/Button";
 import { isEmailValid, isPasswordValid } from "../../utils/regex";
 
@@ -92,14 +92,14 @@ export const RegisterForm = () => {
         Already got an account ? <a>Sign in </a>
       </div>
       <form>
-        <LabelInput
+        <Input
           type="email"
           placeholder="email@example.com"
           label="Email"
           callback={updateEmail}
           error={userError}
         />
-        <LabelInput
+        <Input
           type="password"
           placeholder="Password"
           label="Password"
@@ -119,7 +119,7 @@ export const RegisterForm = () => {
               : {}
           }
         />
-        <LabelInput
+        <Input
           type="password"
           placeholder="Password"
           label="Password confirmation"

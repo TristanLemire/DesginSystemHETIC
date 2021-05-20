@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {colors, fontType, space, radius} from "../../styles/const"
+import { colors, fontType, space, radius } from "../../styles/const";
 
 export const Input = ({ type, placeholder, callback }) => {
   return (

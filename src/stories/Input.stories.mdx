@@ -35,7 +35,7 @@ export const Template = (args) => <Input {...args} />;
     name="Email input"
     args={{
       type: "email",
-      placeholder: "email@example.com",
+      placeholder: "Email, téléphone ou d'utilisateur",
       callback: () => {},
     }}
   >
@@ -43,7 +43,7 @@ export const Template = (args) => <Input {...args} />;
   </Story>
   <Story
     name="Password input"
-    args={{ type: "password", placeholder: "Password", callback: () => {} }}
+    args={{ type: "password", placeholder: "Mot de passe", callback: () => {} }}
   >
     {Template.bind({})}
   </Story>
