@@ -6,6 +6,11 @@ export const VerticalSpacing32 = styled.div`
   margin-bottom: ${space.lg};
 `;
 
+
+export const VerticalSpacing40 = styled.div`
+  margin-bottom: ${space.xl};
+`;
+
 export const VerticalSpacing48 = styled.div`
   margin-bottom: ${space.xxl};
 `;
