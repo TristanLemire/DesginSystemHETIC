@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-<<<<<<< HEAD
 import { Input } from "../atoms/Input";
-=======
 import { LabelCheckbox } from "../molecules/LabelCheckbox";
-import { LabelInput } from "../molecules/LabelInput";
->>>>>>> 42a194bc1dcb7f621439c58517587f136a5f2ae2
 import { Button } from "../atoms/Button";
 import { isEmailValid } from "../../utils/regex";
-import {Text} from "../atoms/Text"
-import {colors, fontType, space} from "../../styles/const"
+import { Text } from "../atoms/Text";
+import { colors, fontType, space } from "../../styles/const";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -71,53 +67,31 @@ export const LoginForm = () => {
   return (
     <LoginFormWrapper>
       <VerticalSpacing48>
-      <Text tag="h2" type={fontType.title} color={colors.font.dark}>Se connecter</Text>
+        <Text tag="h2" type={fontType.title} color={colors.font.dark}>
+          Se connecter
+        </Text>
       </VerticalSpacing48>
       <form>
-<<<<<<< HEAD
-        <Input
-          type="email"
-          placeholder="Email, téléphone ou d'utilisateur"
-          label="Email, téléphone ou d'utilisateur"
-          callback={updateEmail}
-          error={userError}
-        />
-        <Input
-          type="password"
-          placeholder="Mot de passe"
-          label="Mot de passe"
-          callback={updatePassword}
-          error={{}}
-        />
-        <LabelCheckbox
-          label="Rester connecté"
-          name="stayConnected"
-        />
-=======
         <VerticalSpacing32>
-          <LabelInput
+          <Input
             type="email"
-            placeholder="email@example.com"
+            placeholder="Email, téléphone ou nom d'utilisateur"
             callback={updateEmail}
             error={userError}
           />
         </VerticalSpacing32>
         <VerticalSpacing64>
-          <LabelInput
+          <Input
             type="password"
-            placeholder="Password"
+            placeholder="Mot de passe"
             callback={updatePassword}
             error={{}}
           />
         </VerticalSpacing64>
         <LoginOption>
-          <LabelCheckbox
-            label="Rester connecté"
-            name="stayConnected"
-          />
+          <LabelCheckbox label="Rester connecté" name="stayConnected" />
           <span>Forgot password ?</span>
         </LoginOption>
->>>>>>> 8eeaff25b5980ef030227ffa9bec3b56bab19822
       </form>
       <VerticalSpacing64>
         <Button
@@ -127,7 +101,9 @@ export const LoginForm = () => {
         />
       </VerticalSpacing64>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>Pas encore inscrit ? </Text>
+        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
+          Pas encore inscrit ?{" "}
+        </Text>
         <span>Forgot password ?</span>
       </RegisterOption>
     </LoginFormWrapper>
@@ -144,14 +120,14 @@ const LoginFormWrapper = styled.div`
 `;
 
 const VerticalSpacing48 = styled.div`
-  margin-bottom: ${space.xxl}
+  margin-bottom: ${space.xxl};
 `;
 
 const LoginOption = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: ${space.md}
+  margin-bottom: ${space.md};
 `;
 
 const RegisterOption = styled.div`
@@ -160,9 +136,9 @@ const RegisterOption = styled.div`
 `;
 
 const VerticalSpacing32 = styled.div`
-  margin-bottom: ${space.lg}
+  margin-bottom: ${space.lg};
 `;
 
 const VerticalSpacing64 = styled.div`
-  margin-bottom: ${space.xxxl}
+  margin-bottom: ${space.xxxl};
 `;
