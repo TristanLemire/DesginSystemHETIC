@@ -113,7 +113,7 @@ export const font: {
 
 export type fontStyleType = {
   fontSize: string;
-  fontWeight: number;
+  fontWeight: number ;
   letterSpacing: string;
   lineHeight: string;
   fontStyle: string;

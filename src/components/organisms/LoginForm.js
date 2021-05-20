@@ -8,6 +8,8 @@ import { LabelInput } from "../molecules/LabelInput";
 >>>>>>> 42a194bc1dcb7f621439c58517587f136a5f2ae2
 import { Button } from "../atoms/Button";
 import { isEmailValid } from "../../utils/regex";
+import {Text} from "../atoms/Text"
+import {colors, fontType, space} from "../../styles/const"
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -68,11 +70,11 @@ export const LoginForm = () => {
 
   return (
     <LoginFormWrapper>
-      <FormTitle>Sign in</FormTitle>
-      <div>
-        Not signed up ? <a>Register</a>
-      </div>
+      <VerticalSpacing48>
+      <Text tag="h2" type={fontType.title} color={colors.font.dark}>Se connecter</Text>
+      </VerticalSpacing48>
       <form>
+<<<<<<< HEAD
         <Input
           type="email"
           placeholder="Email, téléphone ou d'utilisateur"
@@ -91,25 +93,76 @@ export const LoginForm = () => {
           label="Rester connecté"
           name="stayConnected"
         />
+=======
+        <VerticalSpacing32>
+          <LabelInput
+            type="email"
+            placeholder="email@example.com"
+            callback={updateEmail}
+            error={userError}
+          />
+        </VerticalSpacing32>
+        <VerticalSpacing64>
+          <LabelInput
+            type="password"
+            placeholder="Password"
+            callback={updatePassword}
+            error={{}}
+          />
+        </VerticalSpacing64>
+        <LoginOption>
+          <LabelCheckbox
+            label="Rester connecté"
+            name="stayConnected"
+          />
+          <span>Forgot password ?</span>
+        </LoginOption>
+>>>>>>> 8eeaff25b5980ef030227ffa9bec3b56bab19822
       </form>
-      <div>Forgot password ?</div>
-      <Button
-        text="Sign in"
-        isDisabled={isSubmitDisabled}
-        handleClick={handleFormSubmit}
-      ></Button>
+      <VerticalSpacing64>
+        <Button
+          text="Sign in"
+          isDisabled={isSubmitDisabled}
+          handleClick={handleFormSubmit}
+        />
+      </VerticalSpacing64>
+      <RegisterOption>
+        <Text tap="span" type={fontType.regular} color={colors.font.grey}>Pas encore inscrit ? </Text>
+        <span>Forgot password ?</span>
+      </RegisterOption>
     </LoginFormWrapper>
   );
 };
 
 const LoginFormWrapper = styled.div`
-  padding: 50px;
-  background-color: red;
-  display: inline-block;
+  padding: ${space.xxl};
+  background-color: ${colors.background.white};
+  max-width: 595px;
+  min-width: 375px;
+  width: 40%;
+  box-shadow: 0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7;
 `;
 
-const FormTitle = styled.h2`
-  text-align: center;
-  width: 100%;
-  margin-bottom: 20px;
+const VerticalSpacing48 = styled.div`
+  margin-bottom: ${space.xxl}
+`;
+
+const LoginOption = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: ${space.md}
+`;
+
+const RegisterOption = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const VerticalSpacing32 = styled.div`
+  margin-bottom: ${space.lg}
+`;
+
+const VerticalSpacing64 = styled.div`
+  margin-bottom: ${space.xxxl}
 `;

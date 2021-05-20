@@ -1,5 +1,5 @@
 import React from "react";
-import { colors, font } from "../../styles/const.ts";
+import { colors, fontType } from "../../styles/const.ts";
 import styled from "styled-components";
 
 export const CheckboxLabel = ({ label, name }) => {
@@ -7,9 +7,11 @@ export const CheckboxLabel = ({ label, name }) => {
 };
 
 const LabelWrapper = styled.label`
-  font-weight: bold;
   color: ${colors.font.dark};
-  font-weight: ${font.weight.regular};
-  font-size: ${font.size.xs};
+  font-size: ${fontType.regular.fontSize};
+  font-weight: ${fontType.regular.fontWeight};
+  letter-spacing: ${fontType.regular.letterSpacing};
+  line-height: ${fontType.regular.lineHeight};
+  font-style: ${fontType.regular.fontStyle};
   cursor: pointer;
 `;
