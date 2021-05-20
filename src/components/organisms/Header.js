@@ -17,4 +17,5 @@ const HeaderWrapper = styled.header`
   align-content: center;
   background: ${colors.primary.base};
   padding: ${space.xxl} 0;
+  min-width: 375px;
 `;

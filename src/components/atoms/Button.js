@@ -2,9 +2,9 @@ import React from "react";
 import {
   colors,
   space,
-  font,
   radius,
   borderWidth,
+  fontType
 } from "../../styles/const.ts";
 import styled from "styled-components";
 
@@ -21,10 +21,13 @@ export const Button = ({ text, isDisabled, handleClick }) => {
 };
 
 const ButtonStyled = styled.button`
-  background: ${colors.secondary.light};
-  color: ${colors.background.white};
-  font-weight: ${font.weight.bold};
-  font-size: ${font.size.sm};
+  background: ${colors.secondary.base};
+  color: ${colors.font.white};
+  font-size: ${fontType.textButton.fontSize};
+  font-weight: ${fontType.textButton.fontWeight};
+  letter-spacing: ${fontType.textButton.letterSpacing};
+  line-height: ${fontType.textButton.lineHeight};
+  font-style: ${fontType.textButton.fontStyle};
   padding: ${space.base} 0;
   width: 100%;
   border: none;

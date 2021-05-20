@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../../assets/icons/bananamania-logo.svg";
-import { space } from "../../styles/const";
+import { space, fontType, colors } from "../../styles/const";
+import {Text} from "../atoms/Text"
 
 export const Logo = () => {
   return (
     <LogoWrapper>
       <IconWrapper src={logo} alt="Banana Mania logo" />
-      <h1>BananaMania</h1>
+      <Text tag="h1" type={fontType.title} color={colors.font.dark}>Bananamania</Text>
     </LogoWrapper>
   );
 };
