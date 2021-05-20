@@ -79,8 +79,8 @@ export const font: {
     "xxxs" | "xxs" | "xs" | "s" | "sm" | "base" | "md" | "lg" | "xl" | "xxl",
     string
   >;
-  lineHeight: Record<"paragraph" | "title", string>;
-  letterSpacing: Record<"tracked", string>;
+  lineHeight: Record<"regular" | "paragraph" | "title", string>;
+  letterSpacing: Record<"regular" | "tracked", string>;
 } = {
   weight: {
     light: 300,
@@ -101,10 +101,79 @@ export const font: {
     xxl: rem(48),
   },
   lineHeight: {
+    regular: "none",
     paragraph: "125%",
     title: "150%",
   },
   letterSpacing: {
+    regular: "none",
     tracked: "0.02em",
+  },
+};
+
+export type fontStyleType = {
+  fontSize: string;
+  fontWeight: number;
+  letterSpacing: string;
+  lineHeight: string;
+  fontStyle: string;
+};
+export const fontType: {
+  logo: fontStyleType;
+  title: fontStyleType;
+  regular: fontStyleType;
+  action: fontStyleType;
+  textButton: fontStyleType;
+  link: fontStyleType;
+  input: fontStyleType;
+} = {
+  logo: {
+    fontSize: font.size.xxl,
+    fontWeight: font.weight.bold,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "normal",
+  },
+  title: {
+    fontSize: font.size.xl,
+    fontWeight: font.weight.bold,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "normal",
+  },
+  regular: {
+    fontSize: font.size.xs,
+    fontWeight: font.weight.regular,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "normal",
+  },
+  action: {
+    fontSize: font.size.xxs,
+    fontWeight: font.weight.bold,
+    letterSpacing: font.letterSpacing.tracked,
+    lineHeight: font.lineHeight.paragraph,
+    fontStyle: "normal",
+  },
+  textButton: {
+    fontSize: font.size.sm,
+    fontWeight: font.weight.bold,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "normal",
+  },
+  link: {
+    fontSize: font.size.xs,
+    fontWeight: font.weight.bold,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "normal",
+  },
+  input: {
+    fontSize: font.size.xs,
+    fontWeight: font.weight.light,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "italic",
   },
 };
