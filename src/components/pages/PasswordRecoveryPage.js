@@ -1,23 +1,27 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Header } from "../organisms/Header";
 import logo from "../../assets/icons/banana-pattern.svg";
 import { PasswordRecovery } from "../organisms/PasswordRecovery";
 import { ContactModal } from "../organisms/ContactModal";
-import {space} from "../../styles/const"
+import { space } from "../../styles/const";
 
 export const PasswordRecoveryPage = () => {
-  const [contactModal, setContactModal] = useState(false)
+  const [contactModal, setContactModal] = useState(false);
 
   const goToContactModal = () => {
-    setContactModal(!contactModal)
-  }
+    setContactModal(!contactModal);
+  };
 
   return (
     <Page>
       <Header />
       <FormContainer>
-        { contactModal  ?<ContactModal />: <PasswordRecovery goToContactModal={goToContactModal}/> }
+        {contactModal ? (
+          <ContactModal />
+        ) : (
+          <PasswordRecovery goToContactModal={goToContactModal} />
+        )}
       </FormContainer>
     </Page>
   );
