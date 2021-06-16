@@ -148,8 +148,6 @@ export const RegisterForm = () => {
             }
           />
         </form>
-      </VerticalSpacingXxxl>
-      <VerticalSpacingXxxl>
         <Button
           isDisabled={isSubmitDisabled}
           text="Accéder à mon compte"

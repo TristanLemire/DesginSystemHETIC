@@ -11,26 +11,57 @@ export const VerticalSpacingLg = styled.div`
 `;
 
 export const VerticalSpacingXl = styled.div`
-  margin-bottom: ${space.xl};
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: ${space.xl};
+  }
 
   ${responsiveFor.mobile`
-    margin-bottom: ${space.lg};
+    > * + * {
+      margin-top: ${space.lg};
+    }
   `}
 `;
 
 export const VerticalSpacingXxl = styled.div`
   margin-bottom: ${space.xxl};
 
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: ${space.xxl};
+  }
+
   ${responsiveFor.mobile`
-    margin-bottom: ${space.xl};
+    > * + * {
+      margin-top: ${space.xl};
+    }
   `}
 `;
 
 export const VerticalSpacingXxxl = styled.div`
   margin-bottom: ${space.xxxl};
 
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: ${space.xxxl};
+  }
+
   ${responsiveFor.mobile`
-    margin-bottom: ${space.xxl};
+    > * + * {
+      margin-top: ${space.xxl};
+    }
   `}
 `;
 
