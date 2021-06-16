@@ -6,9 +6,14 @@ import { Button } from "../atoms/Button";
 import { isEmailValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType, space } from "../../styles/const";
-import {VerticalSpacing32, VerticalSpacing48, VerticalSpacing64, FormWrapper} from "../atoms/Container"
+import {
+  VerticalSpacingLg,
+  VerticalSpacingXxl,
+  VerticalSpacingXxxl,
+  FormWrapper,
+} from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
-import { responsiveFor } from '../../styles/mixins';
+import { responsiveFor } from "../../styles/mixins";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -69,43 +74,45 @@ export const LoginForm = () => {
 
   return (
     <FormWrapper>
-      <VerticalSpacing48>
+      <VerticalSpacingXxl>
         <Text tag="h2" type={fontType.title} color={colors.font.dark}>
           Se connecter
         </Text>
-      </VerticalSpacing48>
+      </VerticalSpacingXxl>
       <form>
-        <VerticalSpacing32>
+        <VerticalSpacingLg>
           <Input
             type="text"
             placeholder="Email, téléphone ou nom d'utilisateur"
             callback={updateEmail}
             error={userError}
           />
-        </VerticalSpacing32>
-        <VerticalSpacing64>
+        </VerticalSpacingLg>
+        <VerticalSpacingXxxl>
           <Input
             type="password"
             placeholder="Mot de passe"
             callback={updatePassword}
             error={{}}
           />
-        </VerticalSpacing64>
+        </VerticalSpacingXxxl>
         <LoginOption>
           <LabelCheckbox label="Rester connecté" name="stayConnected" />
-          <CustomLink text="Mot de passe oublié ?" goTo="/password-recovery"/>
+          <CustomLink text="Mot de passe oublié ?" goTo="/password-recovery" />
         </LoginOption>
       </form>
-      <VerticalSpacing64>
+      <VerticalSpacingXxxl>
         <Button
           text="Se connecter"
           isDisabled={isSubmitDisabled}
           handleClick={handleFormSubmit}
         />
-      </VerticalSpacing64>
+      </VerticalSpacingXxxl>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>Pas encore inscrit ? </Text>
-        <CustomLink text="S'inscrire ici" goTo="/register"/>
+        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
+          Pas encore inscrit ? 
+        </Text>
+        <CustomLink text="S'inscrire ici" goTo="/register" />
       </RegisterOption>
     </FormWrapper>
   );

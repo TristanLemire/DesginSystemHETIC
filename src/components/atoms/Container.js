@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { space, colors, boxShadow } from "../../styles/const";
-import { responsiveFor } from '../../styles/mixins';
+import { responsiveFor } from "../../styles/mixins";
 
-export const VerticalSpacing32 = styled.div`
+export const VerticalSpacingLg = styled.div`
   margin-bottom: ${space.lg};
 
   ${responsiveFor.mobile`
@@ -10,8 +10,7 @@ export const VerticalSpacing32 = styled.div`
   `}
 `;
 
-
-export const VerticalSpacing40 = styled.div`
+export const VerticalSpacingXl = styled.div`
   margin-bottom: ${space.xl};
 
   ${responsiveFor.mobile`
@@ -19,7 +18,7 @@ export const VerticalSpacing40 = styled.div`
   `}
 `;
 
-export const VerticalSpacing48 = styled.div`
+export const VerticalSpacingXxl = styled.div`
   margin-bottom: ${space.xxl};
 
   ${responsiveFor.mobile`
@@ -27,7 +26,7 @@ export const VerticalSpacing48 = styled.div`
   `}
 `;
 
-export const VerticalSpacing64 = styled.div`
+export const VerticalSpacingXxxl = styled.div`
   margin-bottom: ${space.xxxl};
 
   ${responsiveFor.mobile`
