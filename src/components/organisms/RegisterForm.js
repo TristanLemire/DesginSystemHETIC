@@ -7,6 +7,7 @@ import { Text } from "../atoms/Text";
 import { colors, fontType } from "../../styles/const";
 import {VerticalSpacing32, VerticalSpacing64, FormWrapper} from "../atoms/Container"
 import { CustomLink } from "../atoms/CustomLink";
+import { Error } from "../atoms/Error";
 
 export const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -32,7 +33,7 @@ export const RegisterForm = () => {
     if (isWrongEmail)
       setUserError({ text: "Veuillez entrer une adresse mail valide." });
     else if (userAlreadyExists)
-      setUserError({ text: "Cet utilisateur existe déjà." });
+      setUserError({ text:  "ce mail est déjà utilisé." });
     else setUserError({});
   }, [userAlreadyExists, isWrongEmail]);
 
@@ -46,9 +47,16 @@ export const RegisterForm = () => {
     setIsWrongConfirmPassword(!passwordConfirmationValidity);
 
     const existingUsers = JSON.parse(localStorage.getItem("users"));
-    const userAlreadyExists =
-      existingUsers && existingUsers.find((user) => user.email === email);
-    setUserAlreadyExists(userAlreadyExists);
+    let userAlreadyExists
+    if( existingUsers && existingUsers.find((user) => user.email === email)){
+      userAlreadyExists = true;
+      setUserAlreadyExists(true);
+    }else{
+      userAlreadyExists = false;
+      setUserAlreadyExists(false);
+    }
+    console.log(userAlreadyExists)
+    console.log("error email: ", userError)
 
     if (
       !emailValidity ||
@@ -57,9 +65,10 @@ export const RegisterForm = () => {
       userAlreadyExists
     )
       return;
-
+    
     register(existingUsers);
   };
+
 
   const register = (existingUsers) => {
     const newUser = { email: email, password: password };
@@ -77,12 +86,13 @@ export const RegisterForm = () => {
 
   const updatePassword = (value) => {
     setPassword(value);
-    console.log(password)
   };
 
   const updateConfirmPassword = (value) => {
     setConfirmPassword(value);
   };
+
+
 
   // const resetErrors = () => {
   //   setIsWrongEmail(false);
@@ -96,7 +106,14 @@ export const RegisterForm = () => {
         <Text tag="h2" type={fontType.title} color={colors.font.dark}>Créer son compte</Text>
       </VerticalSpacing32>
       <VerticalSpacing32>
-        <Text tag="h3" type={fontType.regular} color={colors.font.grey}>Pour accéder à la boutique et découvrir Bananamania !</Text>
+        {
+          userAlreadyExists ? (
+            <Error error={{ text: userError.text }}
+        />
+          ) :(
+            <Text tag="h3" type={fontType.regular} color={colors.font.grey}>Pour accéder à la boutique et découvrir Bananamania !</Text>
+          )
+        }
       </VerticalSpacing32>
       <VerticalSpacing64>
         <form>
@@ -105,7 +122,10 @@ export const RegisterForm = () => {
               type="text"
               placeholder="Email, téléphone ou nom d’utilisateur"
               callback={updateEmail}
-              error={userError}
+              // error={ 
+              //   userAlreadyExists ? {
+              //     text: userError.text
+              //   } : {}}
             />
           </VerticalSpacing32>
           <VerticalSpacing32>
@@ -135,7 +155,7 @@ export const RegisterForm = () => {
               callback={updateConfirmPassword}
               error={
                 isWrongConfirmPassword
-                  ? { text: "Les mots de passe ne correspondent pas." }
+                  ? { text: "Les mots de passe ne correspondent pas à l'adresse mail" }
                   : {}
               }
             />
