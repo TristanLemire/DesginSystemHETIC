@@ -16,25 +16,23 @@ export const PasswordRecovery = ({ goToContactModal }) => {
   return (
     <FormWrapper>
       <VerticalSpacingXxxl>
-        <Text tag="h2" type={fontType.title} color={colors.font.dark}>
+        <Text type={fontType.title} color={colors.font.dark}>
           Récupération du mot de passe
         </Text>
+        <VerticalSpacingXl>
+          <Text type={fontType.regular} color={colors.font.grey}>
+            Nous avons envoyé un message à l’adresse correctemail@gmail.com afin
+            que vous choisissiez un nouveau mot de passe.
+          </Text>
+          <Text type={fontType.regular} color={colors.font.grey}>
+            Vous n’avez pas reçu l’email ? N’hésitez pas à{" "}
+            <CustomAction
+              text="contacter le support"
+              handleClick={goToContactModal}
+            />
+          </Text>
+        </VerticalSpacingXl>
       </VerticalSpacingXxxl>
-      <VerticalSpacingXl>
-        <Text tag="h2" type={fontType.regular} color={colors.font.grey}>
-          Nous avons envoyé un message à l’adresse correctemail@gmail.com afin
-          que vous choisissiez un nouveau mot de passe.
-        </Text>
-      </VerticalSpacingXl>
-      <VerticalSpacingXl>
-        <Text tag="h2" type={fontType.regular} color={colors.font.grey}>
-          Vous n’avez pas reçu l’email ? N’hésitez pas à{" "}
-          <CustomAction
-            text="contacter le support"
-            handleClick={goToContactModal}
-          />
-        </Text>
-      </VerticalSpacingXl>
       <Button
         handleClick={() => history.push("/")}
         text="Retourner à la page de connexion"

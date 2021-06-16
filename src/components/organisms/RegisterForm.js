@@ -104,12 +104,12 @@ export const RegisterForm = () => {
   return (
     <FormWrapper>
       <VerticalSpacingLg>
-        <Text tag="h2" type={fontType.title} color={colors.font.dark}>
+        <Text type={fontType.title} color={colors.font.dark}>
           Créer son compte
         </Text>
       </VerticalSpacingLg>
       <VerticalSpacingLg>
-        <Text tag="h3" type={fontType.regular} color={colors.font.grey}>
+        <Text type={fontType.regular} color={colors.font.grey}>
           Pour accéder à la boutique et découvrir Bananamania !
         </Text>
       </VerticalSpacingLg>
@@ -164,8 +164,6 @@ export const RegisterForm = () => {
             }
           />
         </form>
-      </VerticalSpacingXxxl>
-      <VerticalSpacingXxxl>
         <Button
           isDisabled={isSubmitDisabled}
           text="Accéder à mon compte"
