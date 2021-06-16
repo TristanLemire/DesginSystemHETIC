@@ -115,6 +115,7 @@ export const boxShadow = "0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7"
 
 export type fontStyleType = {
   fontSize: string;
+  fontSizeMobile: string;
   fontWeight: number ;
   letterSpacing: string;
   lineHeight: string;
@@ -135,6 +136,7 @@ export const fontType: {
     letterSpacing: font.letterSpacing.regular,
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
+    fontSizeMobile: font.size.lg,
   },
   title: {
     fontSize: font.size.xl,
@@ -142,6 +144,7 @@ export const fontType: {
     letterSpacing: font.letterSpacing.regular,
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
+    fontSizeMobile: font.size.md,
   },
   regular: {
     fontSize: font.size.xs,
@@ -149,6 +152,7 @@ export const fontType: {
     letterSpacing: font.letterSpacing.regular,
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
+    fontSizeMobile: font.size.xs,
   },
   action: {
     fontSize: font.size.xxs,
@@ -156,6 +160,7 @@ export const fontType: {
     letterSpacing: font.letterSpacing.tracked,
     lineHeight: font.lineHeight.paragraph,
     fontStyle: "normal",
+    fontSizeMobile: font.size.xxs,
   },
   textButton: {
     fontSize: font.size.sm,
@@ -163,6 +168,7 @@ export const fontType: {
     letterSpacing: font.letterSpacing.regular,
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
+    fontSizeMobile: font.size.sm,
   },
   link: {
     fontSize: font.size.xs,
@@ -170,6 +176,7 @@ export const fontType: {
     letterSpacing: font.letterSpacing.regular,
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
+    fontSizeMobile: font.size.xs,
   },
   input: {
     fontSize: font.size.xs,
@@ -177,5 +184,6 @@ export const fontType: {
     letterSpacing: font.letterSpacing.regular,
     lineHeight: font.lineHeight.regular,
     fontStyle: "italic",
+    fontSizeMobile: font.size.xs,
   },
 };
