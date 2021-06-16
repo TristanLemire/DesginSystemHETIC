@@ -77,6 +77,7 @@ export const RegisterForm = () => {
 
   const updatePassword = (value) => {
     setPassword(value);
+    console.log(password)
   };
 
   const updateConfirmPassword = (value) => {
@@ -110,7 +111,7 @@ export const RegisterForm = () => {
           <VerticalSpacing32>
             <Input
               type="password"
-              placeholder="Password"
+              placeholder="Mot de passe"
               callback={updatePassword}
               error={
                 isWrongPassword
@@ -130,7 +131,7 @@ export const RegisterForm = () => {
             </VerticalSpacing32>
             <Input
               type="password"
-              placeholder="Password confirmation"
+              placeholder="Confirmation du mot de passe"
               callback={updateConfirmPassword}
               error={
                 isWrongConfirmPassword

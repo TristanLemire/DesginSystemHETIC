@@ -97,7 +97,7 @@ export const LoginForm = () => {
       </form>
       <VerticalSpacing64>
         <Button
-          text="Sign in"
+          text="Se connecter"
           isDisabled={isSubmitDisabled}
           handleClick={handleFormSubmit}
         />
