@@ -14,6 +14,7 @@ import {
 } from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
 import { useHistory } from "react-router-dom";
+import { responsiveFor } from "../../styles/mixins";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -125,6 +126,10 @@ const LoginOption = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: ${space.md};
+
+  ${responsiveFor.mobile`
+    display: block;
+  `}
 `;
 
 const RegisterOption = styled.div`

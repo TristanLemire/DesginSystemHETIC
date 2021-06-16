@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Checkbox } from "../atoms/Checkbox"
 import { CheckboxLabel } from "../atoms/CheckboxLabel";
 import { Error } from "../atoms/Error";
+import { responsiveFor } from '../../styles/mixins';
+import { space } from "../../styles/const";
 
 export const LabelCheckbox = (props) => {
   const { label, name, error } = props;
@@ -17,7 +19,12 @@ export const LabelCheckbox = (props) => {
   );
 };
 
-const CheckboxWrapper = styled.div``;
+const CheckboxWrapper = styled.div`
+
+  ${responsiveFor.mobile`
+    margin-bottom: ${space.base};
+  `}
+`;
 
 const CheckboxContainer = styled.div`
   display: flex;
