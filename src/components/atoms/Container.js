@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { space, colors, boxShadow } from "../../styles/const";
+import { responsiveFor } from '../../styles/mixins';
 
 export const VerticalSpacing32 = styled.div`
   margin-bottom: ${space.lg};
@@ -25,4 +26,9 @@ export const FormWrapper = styled.div`
   min-width: 375px;
   width: 40%;
   box-shadow: ${boxShadow};
+
+  ${responsiveFor.mobile`
+    min-width: unset;
+    width: 90%;
+  `}
 `;
