@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Modal } from "../components/organisms/Modal";
+
+<Meta
+  title="Components/Organisms/Modal"
+  component={Modal}
+  argTypes={{
+    title: {
+      control: {
+        type: "text",
+      },
+    },
+  }}
+  parameters={{
+    design: {
+      type: "figma",
+      url:
+        "https://www.figma.com/file/Ngi8PyV1EngqKeQyHwMDl4/DS-G8-Bananamania?node-id=291%3A23012",
+    },
+  }}
+/>
+
+# Modal
+
+export const Template = (args) => <Modal {...args} />;
+
+<Canvas>
+  <Story name="Modal regular" args={{ title: "Ravis de vous revoir" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

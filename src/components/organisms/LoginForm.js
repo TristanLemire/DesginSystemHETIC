@@ -15,6 +15,7 @@ import {
 } from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
 import { responsiveFor } from "../../styles/mixins";
+import { useHistory } from "react-router-dom";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -26,6 +27,7 @@ export const LoginForm = () => {
   const [matchingUserPassword, setMatchingUserPassword] = useState(false);
 
   const [userError, setUserError] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
     email && password ? setIsSubmitDisabled(false) : setIsSubmitDisabled(true);
@@ -71,6 +73,7 @@ export const LoginForm = () => {
 
     // TODO: use parent callback to retreive user email (or take it from localstorage) + display modal
     console.log("connected to user:", email);
+    history.push("/logged");
   };
 
   const updateEmail = (value) => {
@@ -122,7 +125,7 @@ export const LoginForm = () => {
         />
       </VerticalSpacingXxxl>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
+        <Text type={fontType.regular} color={colors.font.grey}>
           Pas encore inscrit ? 
         </Text>
         <CustomLink text="S'inscrire ici" goTo="/register" />

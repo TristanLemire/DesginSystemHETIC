@@ -12,6 +12,7 @@ import {
 } from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
 import { Error } from "../atoms/Error";
+import { useHistory } from "react-router-dom";
 
 export const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -26,6 +27,7 @@ export const RegisterForm = () => {
   const [userAlreadyExists, setUserAlreadyExists] = useState(false);
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+  const history = useHistory();
 
   useEffect(() => {
     email && password && confirmPassword
@@ -69,17 +71,16 @@ export const RegisterForm = () => {
       return;
     
     register(existingUsers);
+    history.push("/welcome");
   };
 
 
   const register = (existingUsers) => {
-    const newUser = { email: email, password: password };
+    const newUser = { email: email, password: password, isLogged: true };
     const newUserList = existingUsers ? existingUsers : [];
     newUserList.push(newUser);
 
     localStorage.setItem("users", JSON.stringify(newUserList));
-    // TODO: open modal success
-    console.log("sucess new user created", newUser);
   };
 
   const updateEmail = (value) => {

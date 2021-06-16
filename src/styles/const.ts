@@ -130,6 +130,7 @@ export const fontType: {
   textButton: fontStyleType;
   link: fontStyleType;
   input: fontStyleType;
+  user: fontStyleType;
 } = {
   logo: {
     fontSize: font.size.xxl,
@@ -192,6 +193,15 @@ export const fontType: {
     lineHeight: font.lineHeight.regular,
     fontStyle: "italic",
     fontSizeMobile: font.size.xs,
+    span: false,
+  },
+  user: {
+    fontSize: font.size.sm,
+    fontWeight: font.weight.light,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "normal",
+    fontSizeMobile: font.size.sm,
     span: false,
   },
 };

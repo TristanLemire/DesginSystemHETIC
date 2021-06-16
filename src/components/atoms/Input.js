@@ -35,7 +35,8 @@ const InputWrapper = styled.input`
     line-height: ${fontType.input.lineHeight};
     font-style: ${fontType.input.fontStyle};
   }
+
   &:focus {
-    border: 1px solid ${(props) => props.error !== false ? colors.error.base : colors.neutral.lighter}
+    border-color: ${(error) => error !== false ? colors.error.base : colors.neutral.lighter};
   }
 `;
