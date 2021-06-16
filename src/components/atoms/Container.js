@@ -11,12 +11,12 @@ export const VerticalSpacingLg = styled.div`
 `;
 
 export const VerticalSpacingXl = styled.div`
-  > * {
+  & > * {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  > * + * {
+  & > * + * {
     margin-top: ${space.xl};
   }
 
@@ -30,12 +30,12 @@ export const VerticalSpacingXl = styled.div`
 export const VerticalSpacingXxl = styled.div`
   margin-bottom: ${space.xxl};
 
-  > * {
+  & > * {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  > * + * {
+  & > * + * {
     margin-top: ${space.xxl};
   }
 
@@ -49,12 +49,12 @@ export const VerticalSpacingXxl = styled.div`
 export const VerticalSpacingXxxl = styled.div`
   margin-bottom: ${space.xxxl};
 
-  > * {
+  & > * {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  > * + * {
+  & > * + * {
     margin-top: ${space.xxxl};
   }
 
