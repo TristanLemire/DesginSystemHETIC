@@ -8,6 +8,7 @@ type TextProps = {
   color: string;
   children: string;
   underline?: boolean;
+  centered?: boolean;
 };
 
 export const Text = (props: TextProps) => {
@@ -21,7 +22,8 @@ export const Text = (props: TextProps) => {
     line-height: ${props.type.lineHeight};
     font-style: ${props.type.fontStyle};
     border-bottom: ${props.underline && `solid ${props.color}`};
-    padding-bottom:  ${props.underline && space.xxxs};
+    padding-bottom: ${props.underline && space.xxxs};
+    text-align: ${props.centered && "center"};
   `;
 
   return <CustomTagStyled>{props.children}</CustomTagStyled>;

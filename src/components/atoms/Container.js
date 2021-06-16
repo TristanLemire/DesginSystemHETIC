@@ -5,7 +5,6 @@ export const VerticalSpacing32 = styled.div`
   margin-bottom: ${space.lg};
 `;
 
-
 export const VerticalSpacing40 = styled.div`
   margin-bottom: ${space.xl};
 `;

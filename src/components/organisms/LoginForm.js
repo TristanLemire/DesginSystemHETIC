@@ -6,8 +6,14 @@ import { Button } from "../atoms/Button";
 import { isEmailValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType, space } from "../../styles/const";
-import {VerticalSpacing32, VerticalSpacing48, VerticalSpacing64, FormWrapper} from "../atoms/Container"
+import {
+  VerticalSpacing32,
+  VerticalSpacing48,
+  VerticalSpacing64,
+  FormWrapper,
+} from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
+import { useHistory } from "react-router-dom";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -18,6 +24,7 @@ export const LoginForm = () => {
   const [isUserInvalid, setIsUserInvalid] = useState(false);
 
   const [userError, setUserError] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
     email && password ? setIsSubmitDisabled(false) : setIsSubmitDisabled(true);
@@ -56,6 +63,7 @@ export const LoginForm = () => {
 
     // TODO: use parent callback to retreive user email (or take it from localstorage) + display modal
     console.log("connected to user:", email);
+    history.push("/logged");
   };
 
   const updateEmail = (value) => {
@@ -92,7 +100,7 @@ export const LoginForm = () => {
         </VerticalSpacing64>
         <LoginOption>
           <LabelCheckbox label="Rester connecté" name="stayConnected" />
-          <CustomLink text="Mot de passe oublié ?" goTo="/password-recovery"/>
+          <CustomLink text="Mot de passe oublié ?" goTo="/password-recovery" />
         </LoginOption>
       </form>
       <VerticalSpacing64>
@@ -103,8 +111,10 @@ export const LoginForm = () => {
         />
       </VerticalSpacing64>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>Pas encore inscrit ? </Text>
-        <CustomLink text="S'inscrire ici" goTo="/register"/>
+        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
+          Pas encore inscrit ? 
+        </Text>
+        <CustomLink text="S'inscrire ici" goTo="/register" />
       </RegisterOption>
     </FormWrapper>
   );

@@ -111,11 +111,11 @@ export const font: {
   },
 };
 
-export const boxShadow = "0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7"
+export const boxShadow = "0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7";
 
 export type fontStyleType = {
   fontSize: string;
-  fontWeight: number ;
+  fontWeight: number;
   letterSpacing: string;
   lineHeight: string;
   fontStyle: string;
@@ -128,6 +128,7 @@ export const fontType: {
   textButton: fontStyleType;
   link: fontStyleType;
   input: fontStyleType;
+  user: fontStyleType;
 } = {
   logo: {
     fontSize: font.size.xxl,
@@ -177,5 +178,12 @@ export const fontType: {
     letterSpacing: font.letterSpacing.regular,
     lineHeight: font.lineHeight.regular,
     fontStyle: "italic",
+  },
+  user: {
+    fontSize: font.size.sm,
+    fontWeight: font.weight.light,
+    letterSpacing: font.letterSpacing.regular,
+    lineHeight: font.lineHeight.regular,
+    fontStyle: "normal",
   },
 };
