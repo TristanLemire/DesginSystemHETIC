@@ -111,15 +111,16 @@ export const font: {
   },
 };
 
-export const boxShadow = "0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7"
+export const boxShadow = "0px 0px 46px #c8c8c8, 0px 0px 13px #e7e7e7";
 
 export type fontStyleType = {
   fontSize: string;
   fontSizeMobile: string;
-  fontWeight: number ;
+  fontWeight: number;
   letterSpacing: string;
   lineHeight: string;
   fontStyle: string;
+  span: boolean;
 };
 export const fontType: {
   logo: fontStyleType;
@@ -137,6 +138,7 @@ export const fontType: {
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
     fontSizeMobile: font.size.lg,
+    span: false,
   },
   title: {
     fontSize: font.size.xl,
@@ -145,6 +147,7 @@ export const fontType: {
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
     fontSizeMobile: font.size.md,
+    span: false,
   },
   regular: {
     fontSize: font.size.xs,
@@ -153,6 +156,7 @@ export const fontType: {
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
     fontSizeMobile: font.size.xs,
+    span: false,
   },
   action: {
     fontSize: font.size.xxs,
@@ -161,6 +165,7 @@ export const fontType: {
     lineHeight: font.lineHeight.paragraph,
     fontStyle: "normal",
     fontSizeMobile: font.size.xxs,
+    span: true,
   },
   textButton: {
     fontSize: font.size.sm,
@@ -169,6 +174,7 @@ export const fontType: {
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
     fontSizeMobile: font.size.sm,
+    span: false,
   },
   link: {
     fontSize: font.size.xs,
@@ -177,6 +183,7 @@ export const fontType: {
     lineHeight: font.lineHeight.regular,
     fontStyle: "normal",
     fontSizeMobile: font.size.xs,
+    span: true,
   },
   input: {
     fontSize: font.size.xs,
@@ -185,5 +192,6 @@ export const fontType: {
     lineHeight: font.lineHeight.regular,
     fontStyle: "italic",
     fontSizeMobile: font.size.xs,
+    span: false,
   },
 };

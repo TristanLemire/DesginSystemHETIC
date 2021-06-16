@@ -75,7 +75,7 @@ export const LoginForm = () => {
   return (
     <FormWrapper>
       <VerticalSpacingXxl>
-        <Text tag="h2" type={fontType.title} color={colors.font.dark}>
+        <Text type={fontType.title} color={colors.font.dark}>
           Se connecter
         </Text>
       </VerticalSpacingXxl>
