@@ -12,17 +12,20 @@ type TextProps = {
 
 export const Text = (props: TextProps) => {
   const CustomTag = `${props.tag}` as keyof JSX.IntrinsicElements;
-
-  const CustomTagStyled = styled(CustomTag)`
-    color: ${props.color};
-    font-size: ${props.type.fontSize};
-    font-weight: ${props.type.fontWeight};
-    letter-spacing: ${props.type.letterSpacing};
-    line-height: ${props.type.lineHeight};
-    font-style: ${props.type.fontStyle};
-    border-bottom: ${props.underline && `solid ${props.color}`};
-    padding-bottom:  ${props.underline && space.xxxs};
-  `;
-
-  return <CustomTagStyled>{props.children}</CustomTagStyled>;
+  return (
+    <CustomTag>
+      <CustomTagStyled theme={props}>{props.children}</CustomTagStyled>
+    </CustomTag>
+  );
 };
+
+const CustomTagStyled = styled.p`
+  color: ${(props) => props.theme.color};
+  font-size: ${(props) => props.theme.type.fontSize};
+  font-weight: ${(props) => props.theme.type.fontWeight};
+  letter-spacing: ${(props) => props.theme.type.letterSpacing};
+  line-height: ${(props) => props.theme.type.lineHeight};
+  font-style: ${(props) => props.theme.type.fontStyle};
+  border-bottom: ${(props) => props.theme.underline && `solid ${props.color}`};
+  padding-bottom: ${(props) => props.theme.underline && space.xxxs};
+`;
