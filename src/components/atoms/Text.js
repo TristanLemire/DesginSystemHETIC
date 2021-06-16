@@ -8,6 +8,7 @@ export const Text = (props) => {
 };
 
 const CustomTagStyled = styled.p`
+  text-align: ${(props) => props.theme.centered && `center`};
   color: ${(props) => props.theme.color};
   font-size: ${(props) => props.theme.type.fontSize};
   font-weight: ${(props) => props.theme.type.fontWeight};
