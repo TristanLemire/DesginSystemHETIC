@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { fontStyleType, space } from "../../styles/const";
 
 type TextProps = {
+  tag: "h1" | "h2" | "h3" | "h4" | "span" | "p";
   type: fontStyleType;
   color: string;
   children: string;
@@ -10,7 +11,12 @@ type TextProps = {
 };
 
 export const Text = (props: TextProps) => {
-  return <CustomTagStyled theme={props}>{props.children}</CustomTagStyled>;
+  const CustomTag = `${props.tag}` as keyof JSX.IntrinsicElements;
+  return (
+    <CustomTag>
+      <CustomTagStyled theme={props}>{props.children}</CustomTagStyled>
+    </CustomTag>
+  );
 };
 
 const CustomTagStyled = styled.p`
