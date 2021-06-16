@@ -3,7 +3,7 @@ import { colors, fontType } from "../../styles/const.ts";
 import styled from "styled-components";
 
 export const CheckboxLabel = ({ label, name }) => {
-  return <LabelWrapper for={name}>{label}</LabelWrapper>;
+  return <LabelWrapper htmlFor={name}>{label}</LabelWrapper>;
 };
 
 const LabelWrapper = styled.label`
