@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../atoms/Button";
-import { VerticalSpacing48, FormWrapper } from "../atoms/Container";
+import { VerticalSpacingXxl, FormWrapper } from "../atoms/Container";
 import { Text } from "../atoms/Text";
 import { colors, fontType } from "../../styles/const";
 import { useHistory } from "react-router-dom";
@@ -25,26 +25,20 @@ export const Modal = ({ title }) => {
 
   return (
     <FormWrapper>
-      <VerticalSpacing48>
-        <Text
-          tag="h2"
-          type={fontType.title}
-          color={colors.font.dark}
-          centered={true}
-        >
+      <VerticalSpacingXxl>
+        <Text type={fontType.title} color={colors.font.dark} centered={true}>
           {title}
         </Text>
-      </VerticalSpacing48>
-      <VerticalSpacing48>
+      </VerticalSpacingXxl>
+      <VerticalSpacingXxl>
         <Text
-          tag="p"
           type={fontType.user}
           color={colors.secondary.base}
           centered={true}
         >
           {user.email}
         </Text>
-      </VerticalSpacing48>
+      </VerticalSpacingXxl>
       <Button
         text="Se déconnecter"
         isDisabled={false}

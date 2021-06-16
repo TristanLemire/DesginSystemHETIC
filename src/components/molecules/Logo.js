@@ -8,7 +8,7 @@ export const Logo = () => {
   return (
     <LogoWrapper>
       <IconWrapper src={logo} alt="Banana Mania logo" />
-      <Text tag="h1" type={fontType.title} color={colors.font.dark}>
+      <Text type={fontType.title} color={colors.font.dark}>
         Bananamania
       </Text>
     </LogoWrapper>

@@ -14,6 +14,7 @@ import {
 } from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
 import { responsiveFor } from "../../styles/mixins";
+import { useHistory } from "react-router-dom";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -77,7 +78,7 @@ export const LoginForm = () => {
   return (
     <FormWrapper>
       <VerticalSpacingXxl>
-        <Text tag="h2" type={fontType.title} color={colors.font.dark}>
+        <Text type={fontType.title} color={colors.font.dark}>
           Se connecter
         </Text>
       </VerticalSpacingXxl>
@@ -111,7 +112,7 @@ export const LoginForm = () => {
         />
       </VerticalSpacingXxxl>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
+        <Text type={fontType.regular} color={colors.font.grey}>
           Pas encore inscrit ? 
         </Text>
         <CustomLink text="S'inscrire ici" goTo="/register" />

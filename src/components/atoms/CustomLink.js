@@ -15,12 +15,7 @@ const LinkButton = styled.a`
 export const CustomLink = ({ text, goTo }) => {
   return (
     <NoUnderlinedLink to={goTo}>
-      <Text
-        tag="span"
-        type={fontType.link}
-        color={colors.primary.dark}
-        underline
-      >
+      <Text type={fontType.link} color={colors.primary.dark} underline>
         {text}
       </Text>
     </NoUnderlinedLink>
@@ -30,12 +25,7 @@ export const CustomLink = ({ text, goTo }) => {
 export const CustomAction = ({ text, handleClick, href }) => {
   return (
     <LinkButton href={href} onClick={() => handleClick && handleClick()}>
-      <Text
-        tag="span"
-        type={fontType.link}
-        color={colors.primary.dark}
-        underline
-      >
+      <Text type={fontType.link} color={colors.primary.dark} underline>
         {text}
       </Text>
     </LinkButton>

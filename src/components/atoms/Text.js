@@ -17,8 +17,8 @@ const CustomTagStyled = styled.p`
   font-style: ${(props) => props.theme.type.fontStyle};
   border-bottom: ${(props) => props.theme.underline && `solid ${props.color}`};
   padding-bottom: ${(props) => props.theme.underline && space.xxxs};
-
+  display: ${(props) => (props.theme.type.span ? "inline" : "block")};
   ${responsiveFor.mobile`
     font-size: ${(props) => props.theme.type.fontSizeMobile};
-  `}
+  `};
 `;
