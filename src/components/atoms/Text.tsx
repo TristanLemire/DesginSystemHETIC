@@ -11,12 +11,7 @@ type TextProps = {
 };
 
 export const Text = (props: TextProps) => {
-  const CustomTag = `${props.tag}` as keyof JSX.IntrinsicElements;
-  return (
-    <CustomTag>
-      <CustomTagStyled theme={props}>{props.children}</CustomTagStyled>
-    </CustomTag>
-  );
+  return <CustomTagStyled theme={props}>{props.children}</CustomTagStyled>;
 };
 
 const CustomTagStyled = styled.p`
