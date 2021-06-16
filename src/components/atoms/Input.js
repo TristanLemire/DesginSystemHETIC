@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { colors, fontType, space, radius } from "../../styles/const";
 
-export const Input = ({ type, placeholder, callback }) => {
+export const Input = ({ type, placeholder, callback, error }) => {
   return (
     <InputWrapper
       type={type}
       placeholder={placeholder}
+      error={error}
       onChange={(event) => callback(event.target.value)}
     />
   );
@@ -33,5 +34,8 @@ const InputWrapper = styled.input`
     letter-spacing: ${fontType.input.letterSpacing};
     line-height: ${fontType.input.lineHeight};
     font-style: ${fontType.input.fontStyle};
+  }
+  &:focus {
+    border: 1px solid ${(props) => props.error !== false ? colors.error.base : colors.neutral.lighter}
   }
 `;

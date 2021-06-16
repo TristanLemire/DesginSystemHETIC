@@ -129,6 +129,7 @@ export const RegisterForm = () => {
               type="text"
               placeholder="Email, téléphone ou nom d’utilisateur"
               callback={updateEmail}
+              error={userAlreadyExists}
             />
           </VerticalSpacingLg>
           <VerticalSpacingLg>

@@ -106,7 +106,7 @@ export const LoginForm = () => {
             type="password"
             placeholder="Mot de passe"
             callback={updatePassword}
-            error={{}}
+            error={matchingUserPassword}
           />
         </VerticalSpacingXxxl>
         <LoginOption>
