@@ -7,6 +7,8 @@ import { isEmailValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType, space } from "../../styles/const";
 import {VerticalSpacing32, VerticalSpacing48, VerticalSpacing64, FormWrapper} from "../atoms/Container"
+import { Error } from "../atoms/Error";
+
 import { CustomLink } from "../atoms/CustomLink";
 
 export const LoginForm = () => {
@@ -16,6 +18,7 @@ export const LoginForm = () => {
 
   const [isWrongEmail, setIsWrongEmail] = useState(false);
   const [isUserInvalid, setIsUserInvalid] = useState(false);
+  const [matchingUserPassword, setMatchingUserPassword] = useState(false);
 
   const [userError, setUserError] = useState({});
 
@@ -26,9 +29,13 @@ export const LoginForm = () => {
   useEffect(() => {
     if (isWrongEmail)
       setUserError({ text: "Veuillez entrer une adresse mail valide." });
+    if (matchingUserPassword) setUserError({ 
+        text: "Le mot de passe ne correspond pas à l'adresse mail" 
+    });
     else if (isUserInvalid) setUserError({ text: "Identifiants incorrects" });
+  
     else setUserError({});
-  }, [isUserInvalid, isWrongEmail]);
+  }, [isUserInvalid, isWrongEmail, matchingUserPassword]);
 
   const handleFormSubmit = (event) => {
     const emailValidity = isEmailValid(email);
@@ -45,7 +52,10 @@ export const LoginForm = () => {
 
     if (!matchingUser) {
       setIsUserInvalid(true);
+      setMatchingUserPassword(true);
       return;
+    } else{
+      setMatchingUserPassword(false);
     }
     login(matchingUser, existingUsers);
   };
@@ -81,6 +91,9 @@ export const LoginForm = () => {
             callback={updateEmail}
             error={userError}
           />
+        </VerticalSpacing32>
+        <VerticalSpacing32> 
+          <Error error={matchingUserPassword ? { text: userError.text } : {}} />
         </VerticalSpacing32>
         <VerticalSpacing64>
           <Input

@@ -33,7 +33,7 @@ export const RegisterForm = () => {
     if (isWrongEmail)
       setUserError({ text: "Veuillez entrer une adresse mail valide." });
     else if (userAlreadyExists)
-      setUserError({ text:  "ce mail est déjà utilisé." });
+      setUserError({ text: "ce mail est déjà utilisé." });
     else setUserError({});
   }, [userAlreadyExists, isWrongEmail]);
 
@@ -55,8 +55,6 @@ export const RegisterForm = () => {
       userAlreadyExists = false;
       setUserAlreadyExists(false);
     }
-    console.log(userAlreadyExists)
-    console.log("error email: ", userError)
 
     if (
       !emailValidity ||
@@ -92,8 +90,6 @@ export const RegisterForm = () => {
     setConfirmPassword(value);
   };
 
-
-
   // const resetErrors = () => {
   //   setIsWrongEmail(false);
   //   setIsWrongPassword(false);
@@ -106,26 +102,24 @@ export const RegisterForm = () => {
         <Text tag="h2" type={fontType.title} color={colors.font.dark}>Créer son compte</Text>
       </VerticalSpacing32>
       <VerticalSpacing32>
-        {
-          userAlreadyExists ? (
-            <Error error={{ text: userError.text }}
-        />
-          ) :(
-            <Text tag="h3" type={fontType.regular} color={colors.font.grey}>Pour accéder à la boutique et découvrir Bananamania !</Text>
-          )
-        }
+        <Text tag="h3" type={fontType.regular} color={colors.font.grey}>Pour accéder à la boutique et découvrir Bananamania !</Text>
       </VerticalSpacing32>
       <VerticalSpacing64>
         <form>
         <VerticalSpacing32>
+            <VerticalSpacing32> 
+              <Error
+                error={ 
+                  userAlreadyExists ? {
+                    text: userError.text
+                  } : {}
+                }
+              />
+            </VerticalSpacing32>
             <Input
               type="text"
               placeholder="Email, téléphone ou nom d’utilisateur"
               callback={updateEmail}
-              // error={ 
-              //   userAlreadyExists ? {
-              //     text: userError.text
-              //   } : {}}
             />
           </VerticalSpacing32>
           <VerticalSpacing32>
