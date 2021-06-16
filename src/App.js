@@ -6,6 +6,7 @@ import { LoginPage } from "./components/pages/LoginPage";
 import { RegisterPage } from "./components/pages/RegisterPage";
 import { LoggedPage } from "./components/pages/LoggedPage";
 import { PasswordRecoveryPage } from "./components/pages/PasswordRecoveryPage";
+import { WelcomePage } from "./components/pages/WelcomePage";
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
           <Route path="/register" component={RegisterPage} />
           <Route exact path="/" component={LoginPage} />
           <Route path="/logged" component={LoggedPage} />
+          <Route path="/welcome" component={WelcomePage} />
         </Switch>
       </AppWrapper>
     </Router>

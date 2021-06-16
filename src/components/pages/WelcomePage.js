@@ -5,12 +5,12 @@ import logo from "../../assets/icons/banana-pattern.svg";
 import { Modal } from "../organisms/Modal";
 import { space } from "../../styles/const";
 
-export const LoggedPage = () => {
+export const WelcomePage = () => {
   return (
     <Page>
       <Header />
       <FormContainer>
-        <Modal title={"Ravi de vous revoir !"} />
+        <Modal title={"Bienvenue !"} />
       </FormContainer>
     </Page>
   );

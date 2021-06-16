@@ -5,8 +5,13 @@ import { Button } from "../atoms/Button";
 import { isEmailValid, isPasswordValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType } from "../../styles/const";
-import {VerticalSpacing32, VerticalSpacing64, FormWrapper} from "../atoms/Container"
+import {
+  VerticalSpacing32,
+  VerticalSpacing64,
+  FormWrapper,
+} from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
+import { useHistory } from "react-router-dom";
 
 export const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +26,7 @@ export const RegisterForm = () => {
   const [userAlreadyExists, setUserAlreadyExists] = useState(false);
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+  const history = useHistory();
 
   useEffect(() => {
     email && password && confirmPassword
@@ -59,16 +65,15 @@ export const RegisterForm = () => {
       return;
 
     register(existingUsers);
+    history.push("/welcome");
   };
 
   const register = (existingUsers) => {
-    const newUser = { email: email, password: password };
+    const newUser = { email: email, password: password, isLogged: true };
     const newUserList = existingUsers ? existingUsers : [];
     newUserList.push(newUser);
 
     localStorage.setItem("users", JSON.stringify(newUserList));
-    // TODO: open modal success
-    console.log("sucess new user created", newUser);
   };
 
   const updateEmail = (value) => {
@@ -77,7 +82,7 @@ export const RegisterForm = () => {
 
   const updatePassword = (value) => {
     setPassword(value);
-    console.log(password)
+    console.log(password);
   };
 
   const updateConfirmPassword = (value) => {
@@ -93,14 +98,18 @@ export const RegisterForm = () => {
   return (
     <FormWrapper>
       <VerticalSpacing32>
-        <Text tag="h2" type={fontType.title} color={colors.font.dark}>Créer son compte</Text>
+        <Text tag="h2" type={fontType.title} color={colors.font.dark}>
+          Créer son compte
+        </Text>
       </VerticalSpacing32>
       <VerticalSpacing32>
-        <Text tag="h3" type={fontType.regular} color={colors.font.grey}>Pour accéder à la boutique et découvrir Bananamania !</Text>
+        <Text tag="h3" type={fontType.regular} color={colors.font.grey}>
+          Pour accéder à la boutique et découvrir Bananamania !
+        </Text>
       </VerticalSpacing32>
       <VerticalSpacing64>
         <form>
-        <VerticalSpacing32>
+          <VerticalSpacing32>
             <Input
               type="text"
               placeholder="Email, téléphone ou nom d’utilisateur"
@@ -128,29 +137,31 @@ export const RegisterForm = () => {
                   : {}
               }
             />
-            </VerticalSpacing32>
-            <Input
-              type="password"
-              placeholder="Confirmation du mot de passe"
-              callback={updateConfirmPassword}
-              error={
-                isWrongConfirmPassword
-                  ? { text: "Les mots de passe ne correspondent pas." }
-                  : {}
-              }
-            />
+          </VerticalSpacing32>
+          <Input
+            type="password"
+            placeholder="Confirmation du mot de passe"
+            callback={updateConfirmPassword}
+            error={
+              isWrongConfirmPassword
+                ? { text: "Les mots de passe ne correspondent pas." }
+                : {}
+            }
+          />
         </form>
       </VerticalSpacing64>
       <VerticalSpacing64>
-      <Button
-        isDisabled={isSubmitDisabled}
-        text="Accéder à mon compte"
-        handleClick={handleFormSubmit}
-      />
+        <Button
+          isDisabled={isSubmitDisabled}
+          text="Accéder à mon compte"
+          handleClick={handleFormSubmit}
+        />
       </VerticalSpacing64>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>Déjà inscrit ? </Text>
-        <CustomLink text="Se connecter ici" goTo="/"/>
+        <Text tag="span" type={fontType.regular} color={colors.font.grey}>
+          Déjà inscrit ? 
+        </Text>
+        <CustomLink text="Se connecter ici" goTo="/" />
       </RegisterOption>
     </FormWrapper>
   );

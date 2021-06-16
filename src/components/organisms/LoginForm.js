@@ -112,7 +112,7 @@ export const LoginForm = () => {
         />
       </VerticalSpacing64>
       <RegisterOption>
-        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
+        <Text tag="span" type={fontType.regular} color={colors.font.grey}>
           Pas encore inscrit ? 
         </Text>
         <CustomLink text="S'inscrire ici" goTo="/register" />
