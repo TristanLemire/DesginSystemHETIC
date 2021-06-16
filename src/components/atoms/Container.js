@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { space, colors, boxShadow } from "../../styles/const";
-import { responsiveFor } from '../../styles/mixins';
+import { responsiveFor } from "../../styles/mixins";
 
-export const VerticalSpacing32 = styled.div`
+export const VerticalSpacingLg = styled.div`
   margin-bottom: ${space.lg};
 
   ${responsiveFor.mobile`
@@ -10,27 +10,58 @@ export const VerticalSpacing32 = styled.div`
   `}
 `;
 
-export const VerticalSpacing40 = styled.div`
-  margin-bottom: ${space.xl};
+export const VerticalSpacingXl = styled.div`
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: ${space.xl};
+  }
 
   ${responsiveFor.mobile`
-    margin-bottom: ${space.lg};
+    > * + * {
+      margin-top: ${space.lg};
+    }
   `}
 `;
 
-export const VerticalSpacing48 = styled.div`
+export const VerticalSpacingXxl = styled.div`
   margin-bottom: ${space.xxl};
 
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: ${space.xxl};
+  }
+
   ${responsiveFor.mobile`
-    margin-bottom: ${space.xl};
+    > * + * {
+      margin-top: ${space.xl};
+    }
   `}
 `;
 
-export const VerticalSpacing64 = styled.div`
+export const VerticalSpacingXxxl = styled.div`
   margin-bottom: ${space.xxxl};
 
+  > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: ${space.xxxl};
+  }
+
   ${responsiveFor.mobile`
-    margin-bottom: ${space.xxl};
+    > * + * {
+      margin-top: ${space.xxl};
+    }
   `}
 `;
 

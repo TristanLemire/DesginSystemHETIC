@@ -6,8 +6,8 @@ import { isEmailValid, isPasswordValid } from "../../utils/regex";
 import { Text } from "../atoms/Text";
 import { colors, fontType } from "../../styles/const";
 import {
-  VerticalSpacing32,
-  VerticalSpacing64,
+  VerticalSpacingLg,
+  VerticalSpacingXxxl,
   FormWrapper,
 } from "../atoms/Container";
 import { CustomLink } from "../atoms/CustomLink";
@@ -97,27 +97,27 @@ export const RegisterForm = () => {
 
   return (
     <FormWrapper>
-      <VerticalSpacing32>
+      <VerticalSpacingLg>
         <Text tag="h2" type={fontType.title} color={colors.font.dark}>
           Créer son compte
         </Text>
-      </VerticalSpacing32>
-      <VerticalSpacing32>
+      </VerticalSpacingLg>
+      <VerticalSpacingLg>
         <Text tag="h3" type={fontType.regular} color={colors.font.grey}>
           Pour accéder à la boutique et découvrir Bananamania !
         </Text>
-      </VerticalSpacing32>
-      <VerticalSpacing64>
+      </VerticalSpacingLg>
+      <VerticalSpacingXxxl>
         <form>
-          <VerticalSpacing32>
+          <VerticalSpacingLg>
             <Input
               type="text"
               placeholder="Email, téléphone ou nom d’utilisateur"
               callback={updateEmail}
               error={userError}
             />
-          </VerticalSpacing32>
-          <VerticalSpacing32>
+          </VerticalSpacingLg>
+          <VerticalSpacingLg>
             <Input
               type="password"
               placeholder="Mot de passe"
@@ -137,7 +137,7 @@ export const RegisterForm = () => {
                   : {}
               }
             />
-          </VerticalSpacing32>
+          </VerticalSpacingLg>
           <Input
             type="password"
             placeholder="Confirmation du mot de passe"
@@ -149,16 +149,14 @@ export const RegisterForm = () => {
             }
           />
         </form>
-      </VerticalSpacing64>
-      <VerticalSpacing64>
         <Button
           isDisabled={isSubmitDisabled}
           text="Accéder à mon compte"
           handleClick={handleFormSubmit}
         />
-      </VerticalSpacing64>
+      </VerticalSpacingXxxl>
       <RegisterOption>
-        <Text tag="span" type={fontType.regular} color={colors.font.grey}>
+        <Text tap="span" type={fontType.regular} color={colors.font.grey}>
           Déjà inscrit ? 
         </Text>
         <CustomLink text="Se connecter ici" goTo="/" />

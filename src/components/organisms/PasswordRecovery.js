@@ -1,8 +1,8 @@
 import React from "react";
 import { colors, fontType } from "../../styles/const";
 import {
-  VerticalSpacing64,
-  VerticalSpacing40,
+  VerticalSpacingXxxl,
+  VerticalSpacingXl,
   FormWrapper,
 } from "../atoms/Container";
 import { Text } from "../atoms/Text";
@@ -15,26 +15,24 @@ export const PasswordRecovery = ({ goToContactModal }) => {
 
   return (
     <FormWrapper>
-      <VerticalSpacing64>
+      <VerticalSpacingXxxl>
         <Text tag="h2" type={fontType.title} color={colors.font.dark}>
           Récupération du mot de passe
         </Text>
-      </VerticalSpacing64>
-      <VerticalSpacing40>
-        <Text tag="h2" type={fontType.regular} color={colors.font.grey}>
-          Nous avons envoyé un message à l’adresse correctemail@gmail.com afin
-          que vous choisissiez un nouveau mot de passe.
-        </Text>
-      </VerticalSpacing40>
-      <VerticalSpacing40>
-        <Text tag="h2" type={fontType.regular} color={colors.font.grey}>
-          Vous n’avez pas reçu l’email ? N’hésitez pas à{" "}
-          <CustomAction
-            text="contacter le support"
-            handleClick={goToContactModal}
-          />
-        </Text>
-      </VerticalSpacing40>
+        <VerticalSpacingXl>
+          <Text tag="h2" type={fontType.regular} color={colors.font.grey}>
+            Nous avons envoyé un message à l’adresse correctemail@gmail.com afin
+            que vous choisissiez un nouveau mot de passe.
+          </Text>
+          <Text tag="h2" type={fontType.regular} color={colors.font.grey}>
+            Vous n’avez pas reçu l’email ? N’hésitez pas à{" "}
+            <CustomAction
+              text="contacter le support"
+              handleClick={goToContactModal}
+            />
+          </Text>
+        </VerticalSpacingXl>
+      </VerticalSpacingXxxl>
       <Button
         handleClick={() => history.push("/")}
         text="Retourner à la page de connexion"
