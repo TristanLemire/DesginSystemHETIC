@@ -1,22 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { fontStyleType, space } from "../../styles/const";
+import { space } from "../../styles/const";
+import { responsiveFor } from "../../styles/mixins";
 
-type TextProps = {
-  tag: "h1" | "h2" | "h3" | "h4" | "span" | "p";
-  type: fontStyleType;
-  color: string;
-  children: string;
-  underline?: boolean;
-};
-
-export const Text = (props: TextProps) => {
-  const CustomTag = `${props.tag}` as keyof JSX.IntrinsicElements;
-  return (
-    <CustomTag>
-      <CustomTagStyled theme={props}>{props.children}</CustomTagStyled>
-    </CustomTag>
-  );
+export const Text = (props) => {
+  return <CustomTagStyled theme={props}>{props.children}</CustomTagStyled>;
 };
 
 const CustomTagStyled = styled.p`
@@ -28,4 +16,8 @@ const CustomTagStyled = styled.p`
   font-style: ${(props) => props.theme.type.fontStyle};
   border-bottom: ${(props) => props.theme.underline && `solid ${props.color}`};
   padding-bottom: ${(props) => props.theme.underline && space.xxxs};
+
+  ${responsiveFor.mobile`
+    font-size: ${(props) => props.theme.type.fontSizeMobile};
+  `}
 `;
