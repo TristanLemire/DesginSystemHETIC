@@ -11,6 +11,7 @@ export const responsiveFor = Object.keys(breakpoints).reduce(
         ${css(...args)};
       }
     `;
+
     return accumulator;
   },
   {}
